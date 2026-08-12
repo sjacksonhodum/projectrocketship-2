@@ -525,219 +525,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Adafruit RFM+LoRa Breakout-eagle-import:HEADER-1X570MIL"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "JP"
-				(at -6.35 8.255 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.778 1.5113)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Value" ""
-				(at -6.35 -10.16 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.778 1.5113)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Footprint" "Adafruit RFM+LoRa Breakout:1X05_ROUND_70"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "PIN HEADER"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_locked" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "HEADER-1X570MIL_1_0"
-				(polyline
-					(pts
-						(xy -6.35 7.62) (xy -6.35 -7.62)
-					)
-					(stroke
-						(width 0.4064)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -6.35 -7.62) (xy 1.27 -7.62)
-					)
-					(stroke
-						(width 0.4064)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 7.62) (xy -6.35 7.62)
-					)
-					(stroke
-						(width 0.4064)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -7.62) (xy 1.27 7.62)
-					)
-					(stroke
-						(width 0.4064)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive inverted
-					(at -2.54 5.08 0)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 0 0)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.524 1.524)
-							)
-						)
-					)
-				)
-				(pin passive inverted
-					(at -2.54 2.54 0)
-					(length 2.54)
-					(name "2"
-						(effects
-							(font
-								(size 0 0)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.524 1.524)
-							)
-						)
-					)
-				)
-				(pin passive inverted
-					(at -2.54 0 0)
-					(length 2.54)
-					(name "3"
-						(effects
-							(font
-								(size 0 0)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.524 1.524)
-							)
-						)
-					)
-				)
-				(pin passive inverted
-					(at -2.54 -2.54 0)
-					(length 2.54)
-					(name "4"
-						(effects
-							(font
-								(size 0 0)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.524 1.524)
-							)
-						)
-					)
-				)
-				(pin passive inverted
-					(at -2.54 -5.08 0)
-					(length 2.54)
-					(name "5"
-						(effects
-							(font
-								(size 0 0)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.524 1.524)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Adafruit RFM+LoRa Breakout-eagle-import:HEADER-1X970MIL"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -2000,337 +1787,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Adafruit RFM+LoRa Breakout-eagle-import:VIN"
-			(power global)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" ""
-				(at -1.524 1.016 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.0795)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "VIN Supply Symbol"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_locked" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "VIN_1_0"
-				(polyline
-					(pts
-						(xy -1.27 -1.27) (xy 0 0)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 0) (xy 1.27 -1.27)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin power_in line
-					(at 0 -2.54 90)
-					(length 2.54)
-					(name "VIN"
-						(effects
-							(font
-								(size 0 0)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 0 0)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Adafruit RFM+LoRa Breakout-eagle-import:VREG_SOT23-5"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "U"
-				(at -7.62 6.096 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.0795)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Value" ""
-				(at -7.62 -7.62 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.0795)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Footprint" "Adafruit RFM+LoRa Breakout:SOT23-5"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "SOT23-5 Fixed Voltage Regulators\n\nPart Current Out V Out V In V Dropout θJA (°C/W) TJ (°C) Digikey Part No.     ADP121   150mA   3.3V   3.4-5.5V   0.09V @ 150mA   --   --   ADP121-AUJZ33R7CT-ND     ADP121   150mA   3.0V   3.1-5.5V   0.09V @ 150mA   --   --   ADP121-AUJZ30R7CT-ND     ADP122   300mA   3.3V   3.4-5.5V   0.085V @ 300mA   --   --   ADP122AUJZ-3.3-R7CT-ND     ADP1712   300mA   3.3V   3.5-5.5V   0.17V @ 300mA   --   --   ADP1712AUJZ-3.3-R7TR-ND     AP7311 (Low Cost)   150mA   3.3V   3.5-6V   0.15V @ 150mA   --   --   AP7311-33WG-7DICT-ND      LD39015M18R   150mA   1.8V   1.9V-5.5V   0.08V @ 100mA   --   --   497-6977-1-ND      LP2985A-33DBVR   150mA   3.3V   3.3-16V   0.28V @ 150mA   206   150   296-18479-1-ND      MCP1824T-3302E/OT   300mA   3.3V   3.5V-6V   0.2V @ 300mA   --   --   MCP1824T-3302E/OTCT-ND      MIC5205-2.5YM5 TR   150mA   2.5V   2.7-16V   0.165V @ 150mA   --   --   576-1257-2-ND     MIC5205-3.0YM5 TR   150mA   3.0V   3.2V-16V   0.165V @ 150mA   --   --   576-1258-2-ND     MIC5205-3.3YM5 TR   150mA   3.3V   3.5V-16V   0.165V @ 150mA   --   --   576-1259-2-ND     TPS780330220   150mA   3.3V+2.2V   3.6-5.5V   250mV Max   --   --   296-23332-1-ND     TDA3663/N1,135   100mA   3.3V   3.5-45V   0.18V @ 50mA   --   --   568-5343-1-ND\n\nMax operating temp can be calculated using θJA, TJ (max junction temperature), and power in watts.  Set the \"Maximum Ambient Temperature\" until it reaches TJ (\"Max Junction Temperature\"), which is the absolute limit for safe use of the regulator: http://www.daycounter.com/Calculators/Heat-Sink-Temperature-Calculator.phtml Heat Sink Temperature Calculator\n\nFor example, With 12V source into a 3.3V LP2985 and a 30mA load, we are dissipating (12V-3.3V) * 0.03A = 0.261W.  With a θJA of 206 °C/W, a TJ of 150°C, and 261mW we can safely use the chip without a heat sink up to 75°C (=147.1°C Junction Temperature)."
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_locked" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "VREG_SOT23-5_1_0"
-				(polyline
-					(pts
-						(xy -7.62 5.08) (xy 7.62 5.08)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -7.62 -5.08) (xy -7.62 5.08)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 7.62 5.08) (xy 7.62 -5.08)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 7.62 -5.08) (xy -7.62 -5.08)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin power_in line
-					(at -10.16 2.54 0)
-					(length 2.54)
-					(name "IN"
-						(effects
-							(font
-								(size 1.524 1.524)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.524 1.524)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -10.16 -2.54 0)
-					(length 2.54)
-					(name "GND"
-						(effects
-							(font
-								(size 1.524 1.524)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.524 1.524)
-							)
-						)
-					)
-				)
-				(pin input line
-					(at -10.16 0 0)
-					(length 2.54)
-					(name "EN"
-						(effects
-							(font
-								(size 1.524 1.524)
-							)
-						)
-					)
-					(number "3"
-						(effects
-							(font
-								(size 1.524 1.524)
-							)
-						)
-					)
-				)
-				(pin bidirectional line
-					(at 10.16 -2.54 180)
-					(length 2.54)
-					(name "P4"
-						(effects
-							(font
-								(size 1.524 1.524)
-							)
-						)
-					)
-					(number "4"
-						(effects
-							(font
-								(size 1.524 1.524)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at 10.16 2.54 180)
-					(length 2.54)
-					(name "OUT"
-						(effects
-							(font
-								(size 1.524 1.524)
-							)
-						)
-					)
-					(number "5"
-						(effects
-							(font
-								(size 1.524 1.524)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 	)
 	(junction
 		(at 190.5 102.87)
@@ -2339,10 +1795,10 @@
 		(uuid "373f9713-d8cd-4c6a-a38e-a53819d008bb")
 	)
 	(junction
-		(at 137.16 44.45)
+		(at 152.4 48.26)
 		(diameter 0)
 		(color 0 0 0 0)
-		(uuid "573b3f03-4744-4d7f-a24f-46ff75f7167a")
+		(uuid "3fba4ede-7f66-4800-892c-dc00455a3b4d")
 	)
 	(junction
 		(at 190.5 90.17)
@@ -2374,15 +1830,9 @@
 		(color 0 0 0 0)
 		(uuid "ebc01adb-5012-48f1-8248-1e278a723865")
 	)
-	(junction
-		(at 137.16 52.07)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "f4c3e49d-2938-4d54-82cc-563092d68023")
-	)
 	(wire
 		(pts
-			(xy 66.04 78.74) (xy 66.04 81.28)
+			(xy 143.51 48.26) (xy 143.51 50.8)
 		)
 		(stroke
 			(width 0.1524)
@@ -2412,16 +1862,6 @@
 	)
 	(wire
 		(pts
-			(xy 236.22 115.57) (xy 220.98 115.57)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "0d3be801-67ee-4f9c-87cd-34748afc10c0")
-	)
-	(wire
-		(pts
 			(xy 205.74 59.69) (xy 205.74 62.23)
 		)
 		(stroke
@@ -2429,16 +1869,6 @@
 			(type solid)
 		)
 		(uuid "0e5ba0ad-b4cf-4845-abc0-af5113ec8690")
-	)
-	(wire
-		(pts
-			(xy 162.56 92.71) (xy 177.8 92.71)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "10bf748e-36cc-418c-b8c5-140e054b48f1")
 	)
 	(wire
 		(pts
@@ -2482,26 +1912,6 @@
 	)
 	(wire
 		(pts
-			(xy 220.98 110.49) (xy 236.22 110.49)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "170289ee-2db4-4d7e-917b-ccd4844e6c87")
-	)
-	(wire
-		(pts
-			(xy 236.22 107.95) (xy 220.98 107.95)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "1ae02df8-c0c2-4ecb-b63c-9374ae8bb365")
-	)
-	(wire
-		(pts
 			(xy 236.22 74.93) (xy 220.98 74.93)
 		)
 		(stroke
@@ -2509,6 +1919,16 @@
 			(type solid)
 		)
 		(uuid "1bae868c-5a12-44f7-9bae-487f384f0cf9")
+	)
+	(wire
+		(pts
+			(xy 152.4 58.42) (xy 152.4 62.23)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "1f66ba11-bb44-4f2d-8596-f87791456d2a")
 	)
 	(wire
 		(pts
@@ -2532,23 +1952,13 @@
 	)
 	(wire
 		(pts
-			(xy 66.04 88.9) (xy 66.04 92.71)
+			(xy 143.51 58.42) (xy 143.51 62.23)
 		)
 		(stroke
 			(width 0.1524)
 			(type solid)
 		)
 		(uuid "23b70731-462e-4aee-925b-30c88cb83492")
-	)
-	(wire
-		(pts
-			(xy 162.56 95.25) (xy 177.8 95.25)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "27ca2cf1-c629-4c73-94db-e7fe1f9dbdb3")
 	)
 	(wire
 		(pts
@@ -2569,26 +1979,6 @@
 			(type solid)
 		)
 		(uuid "345975d9-704a-4e75-9a0c-a2b559894efa")
-	)
-	(wire
-		(pts
-			(xy 137.16 49.53) (xy 137.16 52.07)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "40f5af34-79f6-45f1-9b0b-d4c967a843ac")
-	)
-	(wire
-		(pts
-			(xy 220.98 113.03) (xy 236.22 113.03)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "424097d3-df08-4faf-81d1-27d169ef7cf8")
 	)
 	(wire
 		(pts
@@ -2632,26 +2022,6 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 82.55) (xy 162.56 82.55)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "54b531e7-c231-41d7-a89c-462e8d2ca47a")
-	)
-	(wire
-		(pts
-			(xy 137.16 44.45) (xy 132.08 44.45)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "558f396c-7eef-497c-8df3-41cade84b4b2")
-	)
-	(wire
-		(pts
 			(xy 190.5 90.17) (xy 190.5 87.63)
 		)
 		(stroke
@@ -2682,16 +2052,6 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 52.07) (xy 132.08 52.07)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "5831b98a-0b5e-4ff0-ab7b-5ea2596deb40")
-	)
-	(wire
-		(pts
 			(xy 236.22 77.47) (xy 220.98 77.47)
 		)
 		(stroke
@@ -2699,16 +2059,6 @@
 			(type solid)
 		)
 		(uuid "5f6eb244-92d5-4be1-94ac-f91c55530524")
-	)
-	(wire
-		(pts
-			(xy 177.8 44.45) (xy 180.34 44.45)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "6b9200ed-cbe1-4fe4-bb84-9d039362f629")
 	)
 	(wire
 		(pts
@@ -2722,26 +2072,6 @@
 	)
 	(wire
 		(pts
-			(xy 157.48 46.99) (xy 149.86 46.99)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "7c058ed0-fc6f-4131-8aa1-998b4d16d791")
-	)
-	(wire
-		(pts
-			(xy 139.7 46.99) (xy 137.16 46.99)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "7fabfaec-39c6-4ab0-83f6-d3e4852a9b12")
-	)
-	(wire
-		(pts
 			(xy 198.12 82.55) (xy 236.22 82.55)
 		)
 		(stroke
@@ -2749,26 +2079,6 @@
 			(type solid)
 		)
 		(uuid "874aa52b-0650-4c4a-9b9f-dfa2723534c0")
-	)
-	(wire
-		(pts
-			(xy 137.16 52.07) (xy 137.16 54.61)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "87c2d7ee-de63-4a6f-8d19-926a3d73825c")
-	)
-	(wire
-		(pts
-			(xy 137.16 46.99) (xy 137.16 44.45)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "90867641-b343-4c3d-8f5c-daedc9bf7cfb")
 	)
 	(wire
 		(pts
@@ -2792,26 +2102,6 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 44.45) (xy 137.16 41.91)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "9b193c4f-4996-42c5-9afc-e53425edce45")
-	)
-	(wire
-		(pts
-			(xy 236.22 105.41) (xy 220.98 105.41)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "9c8ec2e2-0642-4ced-a6b4-351ad1b4f013")
-	)
-	(wire
-		(pts
 			(xy 190.5 100.33) (xy 190.5 102.87)
 		)
 		(stroke
@@ -2822,16 +2112,6 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 85.09) (xy 162.56 85.09)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "a0f13d45-6653-45cc-9627-cfcf37da7a67")
-	)
-	(wire
-		(pts
 			(xy 162.56 115.57) (xy 160.02 115.57)
 		)
 		(stroke
@@ -2839,6 +2119,16 @@
 			(type solid)
 		)
 		(uuid "a98d37fd-b73b-4812-bcb0-ba19d58c224b")
+	)
+	(wire
+		(pts
+			(xy 152.4 48.26) (xy 152.4 50.8)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "aa13efb9-9601-49a9-9aa6-4429ed16773f")
 	)
 	(wire
 		(pts
@@ -2862,13 +2152,13 @@
 	)
 	(wire
 		(pts
-			(xy 157.48 44.45) (xy 137.16 44.45)
+			(xy 152.4 46.99) (xy 152.4 48.26)
 		)
 		(stroke
-			(width 0.1524)
-			(type solid)
+			(width 0)
+			(type default)
 		)
-		(uuid "be4b6b2d-2fb7-4350-bab8-a532e608d00d")
+		(uuid "b46fa62e-0e64-469d-b3f1-64ceddb22223")
 	)
 	(wire
 		(pts
@@ -2902,16 +2192,6 @@
 	)
 	(wire
 		(pts
-			(xy 157.48 49.53) (xy 137.16 49.53)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "d037a29e-16e7-462d-a255-0e8fd3b01dcb")
-	)
-	(wire
-		(pts
 			(xy 170.18 100.33) (xy 170.18 105.41)
 		)
 		(stroke
@@ -2919,16 +2199,6 @@
 			(type solid)
 		)
 		(uuid "d0c50047-d024-48bf-8681-10931da35836")
-	)
-	(wire
-		(pts
-			(xy 180.34 44.45) (xy 180.34 41.91)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "d3888ad3-3f16-45d8-862c-e43109aa1755")
 	)
 	(wire
 		(pts
@@ -2992,16 +2262,6 @@
 	)
 	(wire
 		(pts
-			(xy 137.16 97.79) (xy 121.92 97.79)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "fdbafbc4-a6f0-4757-a3c3-919a25d165c5")
-	)
-	(wire
-		(pts
 			(xy 162.56 100.33) (xy 170.18 100.33)
 		)
 		(stroke
@@ -3060,36 +2320,6 @@
 		)
 		(uuid "1eaba535-ef36-40eb-b923-2d10136bb330")
 	)
-	(label "DIO1"
-		(at 220.98 105.41 0)
-		(effects
-			(font
-				(size 1.2446 1.2446)
-			)
-			(justify left bottom)
-		)
-		(uuid "1ef263e3-1aaa-43f8-b6b4-149d1e94931b")
-	)
-	(label "DIO2"
-		(at 220.98 107.95 0)
-		(effects
-			(font
-				(size 1.2446 1.2446)
-			)
-			(justify left bottom)
-		)
-		(uuid "313ce92a-c19a-4379-8abd-cffc741515b7")
-	)
-	(label "DIO4"
-		(at 165.1 92.71 0)
-		(effects
-			(font
-				(size 1.2446 1.2446)
-			)
-			(justify left bottom)
-		)
-		(uuid "319886ba-b0e0-4a0e-8dd7-8b62d5d9a9c9")
-	)
 	(label "RST_3V"
 		(at 220.98 82.55 0)
 		(effects
@@ -3109,16 +2339,6 @@
 			(justify left bottom)
 		)
 		(uuid "45bb686c-555b-47e2-be43-a5d084f83f7b")
-	)
-	(label "DIO3"
-		(at 220.98 110.49 0)
-		(effects
-			(font
-				(size 1.2446 1.2446)
-			)
-			(justify left bottom)
-		)
-		(uuid "49e2f2f7-6ac6-490d-bf0e-a8d67a25d83f")
 	)
 	(label "DIO0"
 		(at 220.98 69.85 0)
@@ -3140,16 +2360,6 @@
 		)
 		(uuid "4fe4fb9d-cbe4-43fc-8606-08abab86450f")
 	)
-	(label "EN"
-		(at 152.4 46.99 0)
-		(effects
-			(font
-				(size 1.2446 1.2446)
-			)
-			(justify left bottom)
-		)
-		(uuid "61b9aedc-5762-4e81-81bc-ae7f19b319ce")
-	)
 	(label "MISO_3V"
 		(at 121.92 85.09 0)
 		(effects
@@ -3159,26 +2369,6 @@
 			(justify left bottom)
 		)
 		(uuid "84736df7-dd37-4e4f-a7ed-232a99a4784e")
-	)
-	(label "DIO5"
-		(at 121.92 97.79 0)
-		(effects
-			(font
-				(size 1.2446 1.2446)
-			)
-			(justify left bottom)
-		)
-		(uuid "8b9389b7-ca2b-4f60-8212-9ef96a82c845")
-	)
-	(label "DIO5"
-		(at 220.98 115.57 0)
-		(effects
-			(font
-				(size 1.2446 1.2446)
-			)
-			(justify left bottom)
-		)
-		(uuid "91c5faed-ced9-4f76-b7b8-74a5204c8f61")
 	)
 	(label "RST_3V"
 		(at 121.92 95.25 0)
@@ -3190,16 +2380,6 @@
 		)
 		(uuid "944ef0c7-a954-469c-a123-853207b49b26")
 	)
-	(label "DIO1"
-		(at 165.1 85.09 0)
-		(effects
-			(font
-				(size 1.2446 1.2446)
-			)
-			(justify left bottom)
-		)
-		(uuid "a26cc77a-6e90-4c5b-bcd5-65c3eb82232c")
-	)
 	(label "SCK_3V"
 		(at 220.98 72.39 0)
 		(effects
@@ -3209,36 +2389,6 @@
 			(justify left bottom)
 		)
 		(uuid "a329616a-b1b2-41a9-8984-ef44bebd5b53")
-	)
-	(label "DIO3"
-		(at 165.1 95.25 0)
-		(effects
-			(font
-				(size 1.2446 1.2446)
-			)
-			(justify left bottom)
-		)
-		(uuid "b51dee82-3029-46a0-9f5f-743445390511")
-	)
-	(label "DIO4"
-		(at 220.98 113.03 0)
-		(effects
-			(font
-				(size 1.2446 1.2446)
-			)
-			(justify left bottom)
-		)
-		(uuid "b57a3b67-16f8-4027-be9e-36f86f39b33f")
-	)
-	(label "DIO2"
-		(at 165.1 82.55 0)
-		(effects
-			(font
-				(size 1.2446 1.2446)
-			)
-			(justify left bottom)
-		)
-		(uuid "da75b4ca-83db-4ff6-a0ad-00bc37a147a4")
 	)
 	(label "MOSI_3V"
 		(at 121.92 87.63 0)
@@ -3272,7 +2422,7 @@
 	)
 	(symbol
 		(lib_id "Adafruit RFM+LoRa Breakout-eagle-import:CAP_CERAMIC0805-NOOUTLINE")
-		(at 66.04 86.36 0)
+		(at 143.51 55.88 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3282,7 +2432,7 @@
 		(dnp no)
 		(uuid "0ba55bd7-536d-47eb-854c-d5c72cde2024")
 		(property "Reference" "C2"
-			(at 63.75 85.11 90)
+			(at 141.22 54.63 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3292,7 +2442,7 @@
 			)
 		)
 		(property "Value" "0.1uF"
-			(at 68.34 85.11 90)
+			(at 145.81 54.63 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3302,7 +2452,7 @@
 			)
 		)
 		(property "Footprint" "Adafruit RFM+LoRa Breakout:0805-NO"
-			(at 66.04 86.36 0)
+			(at 143.51 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3313,7 +2463,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 66.04 86.36 0)
+			(at 143.51 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3324,7 +2474,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 66.04 86.36 0)
+			(at 143.51 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3430,7 +2580,7 @@
 	)
 	(symbol
 		(lib_id "Adafruit RFM+LoRa Breakout-eagle-import:GND")
-		(at 137.16 57.15 0)
+		(at 152.4 64.77 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3440,7 +2590,7 @@
 		(dnp no)
 		(uuid "200b2c95-4e71-43e4-8e20-e1a698bda181")
 		(property "Reference" "#U$011"
-			(at 137.16 57.15 0)
+			(at 152.4 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3451,7 +2601,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 135.636 59.69 0)
+			(at 150.876 67.31 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3462,7 +2612,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 137.16 57.15 0)
+			(at 152.4 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3473,7 +2623,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 137.16 57.15 0)
+			(at 152.4 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3484,7 +2634,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 137.16 57.15 0)
+			(at 152.4 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3501,97 +2651,6 @@
 			(project "loracircle"
 				(path "/7f2cd56c-c37b-417e-90a4-797999c049b4"
 					(reference "#U$011")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Adafruit RFM+LoRa Breakout-eagle-import:HEADER-1X570MIL")
-		(at 238.76 110.49 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "233407d9-957d-41e8-81ac-c8de7d184079")
-		(property "Reference" "JP1"
-			(at 232.41 102.235 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.778 1.5113)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Value" "HEADER-1X570MIL"
-			(at 232.41 120.65 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.778 1.5113)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Footprint" "Adafruit RFM+LoRa Breakout:1X05_ROUND_70"
-			(at 238.76 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 238.76 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 238.76 110.49 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "4"
-			(uuid "1c76c3fc-5525-44b8-834f-fcac8c24bd36")
-		)
-		(pin "5"
-			(uuid "aa892a4d-d130-4962-9fa8-4c5283da6263")
-		)
-		(pin "2"
-			(uuid "3ae5e44b-8ac1-46fb-80ea-f65e2a7ea460")
-		)
-		(pin "3"
-			(uuid "421f0fba-9210-4943-b6d2-2bb156545339")
-		)
-		(pin "1"
-			(uuid "4808ea87-966a-49a0-b13c-9b97fc76ad5d")
-		)
-		(instances
-			(project "loracircle"
-				(path "/7f2cd56c-c37b-417e-90a4-797999c049b4"
-					(reference "JP1")
 					(unit 1)
 				)
 			)
@@ -3879,7 +2938,7 @@
 	)
 	(symbol
 		(lib_id "Adafruit RFM+LoRa Breakout-eagle-import:GND")
-		(at 66.04 95.25 0)
+		(at 143.51 64.77 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -3889,7 +2948,7 @@
 		(dnp no)
 		(uuid "3e2f57ff-6346-4894-8a3a-61605c498d3e")
 		(property "Reference" "#U$03"
-			(at 66.04 95.25 0)
+			(at 143.51 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3900,7 +2959,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 64.516 97.79 0)
+			(at 141.986 67.31 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -3911,7 +2970,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 66.04 95.25 0)
+			(at 143.51 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3922,7 +2981,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 66.04 95.25 0)
+			(at 143.51 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3933,7 +2992,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 66.04 95.25 0)
+			(at 143.51 64.77 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -3956,86 +3015,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Adafruit RFM+LoRa Breakout-eagle-import:VIN")
-		(at 213.36 57.15 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "4c4eb208-1fda-4260-90ff-4ef44f2597da")
-		(property "Reference" "#U$016"
-			(at 213.36 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "VIN"
-			(at 211.836 56.134 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.0795)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Footprint" ""
-			(at 213.36 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 213.36 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 213.36 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "7f8b6465-858a-4b47-adf1-43d0e014fb54")
-		)
-		(instances
-			(project "loracircle"
-				(path "/7f2cd56c-c37b-417e-90a4-797999c049b4"
-					(reference "#U$016")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Adafruit RFM+LoRa Breakout-eagle-import:3.3V")
-		(at 66.04 76.2 0)
+		(at 143.51 45.72 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4045,7 +3026,7 @@
 		(dnp no)
 		(uuid "5218c47b-6de6-4f6a-8ce9-33a56586edca")
 		(property "Reference" "#U$02"
-			(at 66.04 76.2 0)
+			(at 143.51 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4056,7 +3037,7 @@
 			)
 		)
 		(property "Value" "3.3V"
-			(at 64.516 75.184 0)
+			(at 141.986 44.704 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4067,7 +3048,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 66.04 76.2 0)
+			(at 143.51 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4078,7 +3059,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 66.04 76.2 0)
+			(at 143.51 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4089,7 +3070,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 66.04 76.2 0)
+			(at 143.51 45.72 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4106,174 +3087,6 @@
 			(project "loracircle"
 				(path "/7f2cd56c-c37b-417e-90a4-797999c049b4"
 					(reference "#U$02")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Adafruit RFM+LoRa Breakout-eagle-import:VREG_SOT23-5")
-		(at 167.64 46.99 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "6003b5a3-a83f-44c2-abb4-2c6ec3db33e4")
-		(property "Reference" "U3"
-			(at 160.02 40.894 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.0795)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Value" "AP2112K-3.3"
-			(at 160.02 54.61 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.0795)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Footprint" "Adafruit RFM+LoRa Breakout:SOT23-5"
-			(at 167.64 46.99 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 167.64 46.99 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 167.64 46.99 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "3"
-			(uuid "6ff5d564-360a-4ebe-8da5-027996428460")
-		)
-		(pin "2"
-			(uuid "91ed1ac8-1725-4dfd-9774-1cbf4aa558e7")
-		)
-		(pin "1"
-			(uuid "7791d6b7-0b48-4028-bddb-02cacf2f84e0")
-		)
-		(pin "4"
-			(uuid "d784fa0c-2502-483e-a5eb-bb99827ec428")
-		)
-		(pin "5"
-			(uuid "e66186ab-b8ea-4a64-a9fc-25332ee05c0f")
-		)
-		(instances
-			(project "loracircle"
-				(path "/7f2cd56c-c37b-417e-90a4-797999c049b4"
-					(reference "U3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Adafruit RFM+LoRa Breakout-eagle-import:3.3V")
-		(at 180.34 39.37 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "6b82c77f-6e56-483d-9244-0b989c8e4d47")
-		(property "Reference" "#U$012"
-			(at 180.34 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "3.3V"
-			(at 178.816 38.354 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.0795)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Footprint" ""
-			(at 180.34 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 180.34 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 180.34 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "f2e06b97-fa02-4400-935e-e86190048778")
-		)
-		(instances
-			(project "loracircle"
-				(path "/7f2cd56c-c37b-417e-90a4-797999c049b4"
-					(reference "#U$012")
 					(unit 1)
 				)
 			)
@@ -4542,8 +3355,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Adafruit RFM+LoRa Breakout-eagle-import:VIN")
-		(at 198.12 57.15 0)
+		(lib_id "Adafruit RFM+LoRa Breakout-eagle-import:3.3V")
+		(at 213.36 57.15 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4551,9 +3364,9 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "b5e85747-e5e7-47e0-bfb9-ef27a4fb49f6")
-		(property "Reference" "#U$013"
-			(at 198.12 57.15 0)
+		(uuid "9be49992-a34a-4b25-8344-1bac75c71ec3")
+		(property "Reference" "#U$014"
+			(at 213.36 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4563,8 +3376,8 @@
 				)
 			)
 		)
-		(property "Value" "VIN"
-			(at 196.596 56.134 0)
+		(property "Value" "3.3V"
+			(at 211.836 56.134 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4575,7 +3388,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 198.12 57.15 0)
+			(at 213.36 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4586,7 +3399,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 198.12 57.15 0)
+			(at 213.36 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4597,7 +3410,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 198.12 57.15 0)
+			(at 213.36 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4608,7 +3421,85 @@
 			)
 		)
 		(pin "1"
-			(uuid "f9871563-fc39-45cc-8376-45605e6b1f34")
+			(uuid "949710c8-2bd0-49fe-9ff4-1ad94bba7fa8")
+		)
+		(instances
+			(project "loracircle"
+				(path "/7f2cd56c-c37b-417e-90a4-797999c049b4"
+					(reference "#U$014")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "Adafruit RFM+LoRa Breakout-eagle-import:3.3V")
+		(at 152.4 45.72 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a4bf5f60-56dd-4687-90e7-f235c2836ef4")
+		(property "Reference" "#U$013"
+			(at 152.4 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "3.3V"
+			(at 150.876 44.704 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.0795)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 152.4 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 152.4 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 152.4 45.72 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "1f87e411-6477-4407-a3a4-53b45fa4d06c")
 		)
 		(instances
 			(project "loracircle"
@@ -4776,6 +3667,84 @@
 		)
 	)
 	(symbol
+		(lib_id "Adafruit RFM+LoRa Breakout-eagle-import:3.3V")
+		(at 205.74 57.15 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "c284419c-0bba-438d-9927-4f2622a5a3b3")
+		(property "Reference" "#U$015"
+			(at 205.74 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Value" "3.3V"
+			(at 204.216 56.134 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.0795)
+				)
+				(justify left bottom)
+			)
+		)
+		(property "Footprint" ""
+			(at 205.74 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" ""
+			(at 205.74 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" ""
+			(at 205.74 57.15 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "e00a84d6-1089-4c94-a305-6a519b65bf2d")
+		)
+		(instances
+			(project "loracircle"
+				(path "/7f2cd56c-c37b-417e-90a4-797999c049b4"
+					(reference "#U$015")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
 		(lib_id "Adafruit RFM+LoRa Breakout-eagle-import:GND")
 		(at 180.34 123.19 0)
 		(unit 1)
@@ -4854,8 +3823,8 @@
 		)
 	)
 	(symbol
-		(lib_id "Adafruit RFM+LoRa Breakout-eagle-import:RESISTOR0805_NOOUTLINE")
-		(at 144.78 46.99 0)
+		(lib_id "Adafruit RFM+LoRa Breakout-eagle-import:3.3V")
+		(at 198.12 57.15 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -4863,9 +3832,10 @@
 		(on_board yes)
 		(in_pos_files yes)
 		(dnp no)
-		(uuid "cff0ce1c-8cfa-4b67-b8f2-96b9869d4996")
-		(property "Reference" "R1"
-			(at 144.78 44.45 0)
+		(uuid "d075c9eb-76f5-4df6-bf80-66eb5d0a6177")
+		(property "Reference" "#U$016"
+			(at 198.12 57.15 0)
+			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -4874,20 +3844,19 @@
 				)
 			)
 		)
-		(property "Value" "100K"
-			(at 144.78 46.99 0)
+		(property "Value" "3.3V"
+			(at 196.596 56.134 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
 				(font
-					(size 1.016 1.016)
-					(thickness 0.2032)
-					(bold yes)
+					(size 1.27 1.0795)
 				)
+				(justify left bottom)
 			)
 		)
-		(property "Footprint" "Adafruit RFM+LoRa Breakout:0805-NO"
-			(at 144.78 46.99 0)
+		(property "Footprint" ""
+			(at 198.12 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4898,7 +3867,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 144.78 46.99 0)
+			(at 198.12 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4909,7 +3878,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 144.78 46.99 0)
+			(at 198.12 57.15 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -4919,16 +3888,13 @@
 				)
 			)
 		)
-		(pin "2"
-			(uuid "f664ee03-52fc-444f-9656-68cfa2df7630")
-		)
 		(pin "1"
-			(uuid "52215237-ada4-4807-a5a6-d9648cf66735")
+			(uuid "dd0cd179-0d4c-41ec-ace4-00c5d2308cc8")
 		)
 		(instances
 			(project "loracircle"
 				(path "/7f2cd56c-c37b-417e-90a4-797999c049b4"
-					(reference "R1")
+					(reference "#U$016")
 					(unit 1)
 				)
 			)
@@ -5104,7 +4070,7 @@
 	)
 	(symbol
 		(lib_id "Adafruit RFM+LoRa Breakout-eagle-import:CAP_CERAMIC0805-NOOUTLINE")
-		(at 132.08 49.53 0)
+		(at 152.4 55.88 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -5114,7 +4080,7 @@
 		(dnp no)
 		(uuid "f2557021-be3f-450d-9e7e-2a66d1e3db14")
 		(property "Reference" "C3"
-			(at 129.79 48.28 90)
+			(at 150.11 54.63 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5124,7 +4090,7 @@
 			)
 		)
 		(property "Value" "10uF"
-			(at 134.38 48.28 90)
+			(at 154.7 54.63 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -5134,7 +4100,7 @@
 			)
 		)
 		(property "Footprint" "Adafruit RFM+LoRa Breakout:0805-NO"
-			(at 132.08 49.53 0)
+			(at 152.4 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5145,7 +4111,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 132.08 49.53 0)
+			(at 152.4 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5156,7 +4122,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 132.08 49.53 0)
+			(at 152.4 55.88 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -5176,84 +4142,6 @@
 			(project "loracircle"
 				(path "/7f2cd56c-c37b-417e-90a4-797999c049b4"
 					(reference "C3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Adafruit RFM+LoRa Breakout-eagle-import:VIN")
-		(at 137.16 39.37 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "f33410be-bc7e-49f0-93dd-be0a430c07b6")
-		(property "Reference" "#U$010"
-			(at 137.16 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "VIN"
-			(at 135.636 38.354 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.0795)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Footprint" ""
-			(at 137.16 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 137.16 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 137.16 39.37 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "7dccaa51-93b6-4553-b696-76dbc5a6637d")
-		)
-		(instances
-			(project "loracircle"
-				(path "/7f2cd56c-c37b-417e-90a4-797999c049b4"
-					(reference "#U$010")
 					(unit 1)
 				)
 			)
@@ -5335,84 +4223,6 @@
 			(project "loracircle"
 				(path "/7f2cd56c-c37b-417e-90a4-797999c049b4"
 					(reference "R3")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Adafruit RFM+LoRa Breakout-eagle-import:VIN")
-		(at 205.74 57.15 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "fb9a3cf4-673a-451e-8014-55204a6c2ce2")
-		(property "Reference" "#U$017"
-			(at 205.74 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "VIN"
-			(at 204.216 56.134 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.0795)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Footprint" ""
-			(at 205.74 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 205.74 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 205.74 57.15 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "b24befd3-2660-4cae-8f15-a55f8f0d6f41")
-		)
-		(instances
-			(project "loracircle"
-				(path "/7f2cd56c-c37b-417e-90a4-797999c049b4"
-					(reference "#U$017")
 					(unit 1)
 				)
 			)
