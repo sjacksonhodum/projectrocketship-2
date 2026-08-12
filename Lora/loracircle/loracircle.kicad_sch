@@ -384,147 +384,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Adafruit RFM+LoRa Breakout-eagle-import:HEADER-1X1ROUND"
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "JP"
-				(at -6.35 3.175 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.778 1.5113)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Value" ""
-				(at -6.35 -5.08 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.778 1.5113)
-					)
-					(justify left bottom)
-				)
-			)
-			(property "Footprint" "Adafruit RFM+LoRa Breakout:1X01_ROUND"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "PIN HEADER"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_locked" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "HEADER-1X1ROUND_1_0"
-				(polyline
-					(pts
-						(xy -6.35 2.54) (xy -6.35 -2.54)
-					)
-					(stroke
-						(width 0.4064)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -6.35 -2.54) (xy 1.27 -2.54)
-					)
-					(stroke
-						(width 0.4064)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 2.54) (xy -6.35 2.54)
-					)
-					(stroke
-						(width 0.4064)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 1.27 -2.54) (xy 1.27 2.54)
-					)
-					(stroke
-						(width 0.4064)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive inverted
-					(at -2.54 0 0)
-					(length 2.54)
-					(name "1"
-						(effects
-							(font
-								(size 0 0)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.524 1.524)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Adafruit RFM+LoRa Breakout-eagle-import:HEADER-1X970MIL"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -1468,35 +1327,38 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Adafruit RFM+LoRa Breakout-eagle-import:SMACONNECTOR_EDGE_UFL"
+		(symbol "CONMHF1-SMD-T:CONMHF1-SMD-T"
+			(pin_names
+				(offset 1.016)
+			)
 			(exclude_from_sim no)
 			(in_bom yes)
 			(on_board yes)
 			(in_pos_files yes)
 			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "X"
-				(at 7.62 2.54 0)
+			(property "Reference" "J"
+				(at -1.27 1.524 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
-						(size 1.27 1.0795)
+						(size 1.27 1.27)
 					)
 					(justify left bottom)
 				)
 			)
-			(property "Value" ""
-				(at 7.62 0 0)
+			(property "Value" "CONMHF1-SMD-T"
+				(at -1.524 -6.858 0)
 				(show_name no)
 				(do_not_autoplace no)
 				(effects
 					(font
-						(size 1.27 1.0795)
+						(size 1.27 1.27)
 					)
 					(justify left bottom)
 				)
 			)
-			(property "Footprint" "Adafruit RFM+LoRa Breakout:SMA_EDGELAUNCH_UFL"
+			(property "Footprint" "CONMHF1-SMD-T:TE_CONMHF1-SMD-T"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1505,6 +1367,7 @@
 					(font
 						(size 1.27 1.27)
 					)
+					(justify bottom)
 				)
 			)
 			(property "Datasheet" ""
@@ -1518,7 +1381,7 @@
 					)
 				)
 			)
-			(property "Description" "SMA Connector\n\n90° DIP SMA Connector, 50 Ohm (4UConnector: 07259)"
+			(property "Description" "U.FL/MHF1 Jack 50 Ohm PCB Surface Mount"
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
@@ -1527,26 +1390,185 @@
 					(font
 						(size 1.27 1.27)
 					)
+					(justify bottom)
 				)
 			)
-			(property "ki_locked" ""
+			(property "MF" "Linx Technologies Inc."
 				(at 0 0 0)
 				(show_name no)
 				(do_not_autoplace no)
+				(hide yes)
 				(effects
 					(font
 						(size 1.27 1.27)
 					)
+					(justify bottom)
 				)
 			)
-			(symbol "SMACONNECTOR_EDGE_UFL_1_0"
+			(property "MAXIMUM_PACKAGE_HEIGHT" "1.31mm"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "CREATOR" "DIZAR"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "Price" "None"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "Package" "None"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "Check_prices" "https://www.snapeda.com/parts/CONMHF1-SMD-T/TE+Connectivity/view-part/?ref=eda"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "STANDARD" "Manufacturer Recommendations"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "PARTREV" "09/22"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "VERIFIER" ""
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "SnapEDA_Link" "https://www.snapeda.com/parts/CONMHF1-SMD-T/TE+Connectivity/view-part/?ref=snap"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "MP" "CONMHF1-SMD-T"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "CAD_BUILD" "TE OEM"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "Availability" "In Stock"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(property "MANUFACTURER" "TE Connectivity"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+					(justify bottom)
+				)
+			)
+			(symbol "CONMHF1-SMD-T_0_0"
 				(polyline
 					(pts
-						(xy -5.08 5.08) (xy 5.08 5.08)
+						(xy 1.524 -1.016) (xy 2.54 -1.016)
 					)
 					(stroke
 						(width 0.254)
-						(type solid)
+						(type default)
 					)
 					(fill
 						(type none)
@@ -1554,57 +1576,57 @@
 				)
 				(polyline
 					(pts
-						(xy -5.08 0) (xy -5.08 5.08)
+						(xy 1.778 -3.302) (xy 1.27 -4.064)
 					)
 					(stroke
 						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -5.08 0) (xy 0 0)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -5.08 -5.08) (xy -5.08 0)
-					)
-					(stroke
-						(width 0.254)
-						(type solid)
+						(type default)
 					)
 					(fill
 						(type none)
 					)
 				)
 				(circle
-					(center 0 0)
-					(radius 0.3592)
+					(center 2.54 0)
+					(radius 1.016)
 					(stroke
-						(width 0.8128)
-						(type solid)
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -1.016) (xy 2.54 -3.302)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 2.54 -1.016) (xy 3.556 -1.016)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
 					)
 					(fill
 						(type none)
 					)
 				)
 				(circle
-					(center 0 0)
-					(radius 2.54)
+					(center 2.54 -2.54)
+					(radius 0.254)
 					(stroke
 						(width 0.254)
-						(type solid)
+						(type default)
 					)
 					(fill
 						(type none)
@@ -1612,71 +1634,11 @@
 				)
 				(polyline
 					(pts
-						(xy 2.54 3.81) (xy 3.175 3.81)
-					)
-					(stroke
-						(width 0.127)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.175 3.81) (xy 3.175 2.54)
-					)
-					(stroke
-						(width 0.127)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.175 3.81) (xy 3.81 3.81)
-					)
-					(stroke
-						(width 0.127)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.175 3.175) (xy 2.54 3.81)
-					)
-					(stroke
-						(width 0.127)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 3.81 3.81) (xy 3.175 3.175)
-					)
-					(stroke
-						(width 0.127)
-						(type solid)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 5.08 5.08) (xy 5.08 -5.08)
+						(xy 2.54 -3.302) (xy 1.778 -3.302)
 					)
 					(stroke
 						(width 0.254)
-						(type solid)
+						(type default)
 					)
 					(fill
 						(type none)
@@ -1684,102 +1646,132 @@
 				)
 				(polyline
 					(pts
-						(xy 5.08 -5.08) (xy -5.08 -5.08)
+						(xy 2.54 -3.302) (xy 2.032 -4.064)
 					)
 					(stroke
 						(width 0.254)
-						(type solid)
+						(type default)
 					)
 					(fill
 						(type none)
 					)
 				)
-				(pin power_in line
-					(at -2.54 7.62 270)
-					(length 2.54)
-					(name "GND1"
+				(polyline
+					(pts
+						(xy 2.54 -3.302) (xy 3.302 -3.302)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 3.302 -3.302) (xy 2.794 -4.064)
+					)
+					(stroke
+						(width 0.254)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(rectangle
+					(start 4.1275 -0.3175)
+					(end 6.0325 0.3175)
+					(stroke
+						(width 0.1)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(rectangle
+					(start 4.1275 -2.8575)
+					(end 6.0325 -2.2225)
+					(stroke
+						(width 0.1)
+						(type default)
+					)
+					(fill
+						(type outline)
+					)
+				)
+				(pin passive line
+					(at 0 0 0)
+					(length 5.08)
+					(name ""
 						(effects
 							(font
-								(size 0 0)
+								(size 1.016 1.016)
 							)
 						)
 					)
-					(number "GND@1"
+					(number "1"
 						(effects
 							(font
-								(size 0 0)
+								(size 1.016 1.016)
 							)
 						)
 					)
 				)
 				(pin power_in line
-					(at 2.54 7.62 270)
-					(length 2.54)
-					(name "GND2"
+					(at 0 -2.54 0)
+					(length 5.08)
+					(name ""
 						(effects
 							(font
-								(size 0 0)
+								(size 1.016 1.016)
 							)
 						)
 					)
-					(number "GND@2"
+					(number "2"
 						(effects
 							(font
-								(size 0 0)
-							)
-						)
-					)
-				)
-				(pin power_in line
-					(at -2.54 -7.62 90)
-					(length 2.54)
-					(name "GND3"
-						(effects
-							(font
-								(size 0 0)
-							)
-						)
-					)
-					(number "GND@3"
-						(effects
-							(font
-								(size 0 0)
+								(size 1.016 1.016)
 							)
 						)
 					)
 				)
 				(pin power_in line
-					(at 2.54 -7.62 90)
-					(length 2.54)
-					(name "GND4"
+					(at 0 -2.54 0)
+					(length 5.08)
+					(hide yes)
+					(name ""
 						(effects
 							(font
-								(size 0 0)
+								(size 1.016 1.016)
 							)
 						)
 					)
-					(number "GND@4"
+					(number "3"
 						(effects
 							(font
-								(size 0 0)
+								(size 1.016 1.016)
 							)
 						)
 					)
 				)
-				(pin bidirectional line
-					(at -7.62 0 0)
-					(length 2.54)
-					(name "ANT"
+				(pin power_in line
+					(at 0 -2.54 0)
+					(length 5.08)
+					(hide yes)
+					(name ""
 						(effects
 							(font
-								(size 1.524 1.524)
+								(size 1.016 1.016)
 							)
 						)
 					)
-					(number "P"
+					(number "4"
 						(effects
 							(font
-								(size 0 0)
+								(size 1.016 1.016)
 							)
 						)
 					)
@@ -1805,24 +1797,6 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "5bfe8b5a-c1ff-4c35-8466-81a8ae06e41f")
-	)
-	(junction
-		(at 170.18 100.33)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "a580220f-3e9b-44a6-b96c-7ab61bf54e5d")
-	)
-	(junction
-		(at 180.34 115.57)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "b0ded2f9-3332-42c6-b4b2-d4647e542af2")
-	)
-	(junction
-		(at 160.02 115.57)
-		(diameter 0)
-		(color 0 0 0 0)
-		(uuid "daa93800-c54f-44a8-86b4-be32f3b4d6f5")
 	)
 	(junction
 		(at 119.38 100.33)
@@ -1962,16 +1936,6 @@
 	)
 	(wire
 		(pts
-			(xy 160.02 115.57) (xy 160.02 120.65)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "2885f44f-990a-4760-8d2f-436d23176703")
-	)
-	(wire
-		(pts
 			(xy 121.92 87.63) (xy 137.16 87.63)
 		)
 		(stroke
@@ -1982,6 +1946,16 @@
 	)
 	(wire
 		(pts
+			(xy 170.18 107.95) (xy 165.1 107.95)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "377ae67b-b104-4bc8-9fd5-78dde90d53d5")
+	)
+	(wire
+		(pts
 			(xy 236.22 67.31) (xy 220.98 67.31)
 		)
 		(stroke
@@ -1989,16 +1963,6 @@
 			(type solid)
 		)
 		(uuid "479d7612-24bd-440a-9299-3089140fdf40")
-	)
-	(wire
-		(pts
-			(xy 180.34 110.49) (xy 180.34 115.57)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "4b5525a3-80d7-4bd7-a20e-17d416f0b950")
 	)
 	(wire
 		(pts
@@ -2052,6 +2016,16 @@
 	)
 	(wire
 		(pts
+			(xy 165.1 107.95) (xy 165.1 110.49)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "597be31f-6bfa-4068-86a5-c98056ace551")
+	)
+	(wire
+		(pts
 			(xy 236.22 77.47) (xy 220.98 77.47)
 		)
 		(stroke
@@ -2062,16 +2036,6 @@
 	)
 	(wire
 		(pts
-			(xy 180.34 115.57) (xy 180.34 120.65)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "7a6117eb-4343-497a-8da1-f9df3f49b118")
-	)
-	(wire
-		(pts
 			(xy 198.12 82.55) (xy 236.22 82.55)
 		)
 		(stroke
@@ -2079,16 +2043,6 @@
 			(type solid)
 		)
 		(uuid "874aa52b-0650-4c4a-9b9f-dfa2723534c0")
-	)
-	(wire
-		(pts
-			(xy 162.56 110.49) (xy 160.02 110.49)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "94553b45-a898-45a4-81ab-4ef122bf7874")
 	)
 	(wire
 		(pts
@@ -2112,16 +2066,6 @@
 	)
 	(wire
 		(pts
-			(xy 162.56 115.57) (xy 160.02 115.57)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "a98d37fd-b73b-4812-bcb0-ba19d58c224b")
-	)
-	(wire
-		(pts
 			(xy 152.4 48.26) (xy 152.4 50.8)
 		)
 		(stroke
@@ -2139,16 +2083,6 @@
 			(type solid)
 		)
 		(uuid "afe0837a-7acd-4d50-9277-0a58bfeecfa4")
-	)
-	(wire
-		(pts
-			(xy 177.8 110.49) (xy 180.34 110.49)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "b43b8c47-9212-42a6-ad54-dd21cf6cc8d1")
 	)
 	(wire
 		(pts
@@ -2252,16 +2186,6 @@
 	)
 	(wire
 		(pts
-			(xy 177.8 115.57) (xy 180.34 115.57)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "f748563e-ede9-4d9d-8c02-0ea685f20f01")
-	)
-	(wire
-		(pts
 			(xy 162.56 100.33) (xy 170.18 100.33)
 		)
 		(stroke
@@ -2279,16 +2203,6 @@
 			(type solid)
 		)
 		(uuid "ff5f607d-977f-478d-8669-ee0203891077")
-	)
-	(wire
-		(pts
-			(xy 160.02 110.49) (xy 160.02 115.57)
-		)
-		(stroke
-			(width 0.1524)
-			(type solid)
-		)
-		(uuid "ff895335-5b9c-4717-8a04-64266ad968c0")
 	)
 	(label "DIO0"
 		(at 165.1 87.63 0)
@@ -2451,7 +2365,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Adafruit RFM+LoRa Breakout:0805-NO"
+		(property "Footprint" "LIBRARY:0805-NO"
 			(at 143.51 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -2530,7 +2444,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Adafruit RFM+LoRa Breakout:0805-NO"
+		(property "Footprint" "LIBRARY:0805-NO"
 			(at 190.5 97.79 0)
 			(hide yes)
 			(show_name no)
@@ -2658,7 +2572,7 @@
 	)
 	(symbol
 		(lib_id "Adafruit RFM+LoRa Breakout-eagle-import:GND")
-		(at 160.02 123.19 0)
+		(at 165.1 113.03 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -2668,7 +2582,7 @@
 		(dnp no)
 		(uuid "27f54702-3c91-419a-a123-996b13dc790a")
 		(property "Reference" "#U$07"
-			(at 160.02 123.19 0)
+			(at 165.1 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2679,7 +2593,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 158.496 125.73 0)
+			(at 163.576 115.57 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -2690,7 +2604,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 160.02 123.19 0)
+			(at 165.1 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2701,7 +2615,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 160.02 123.19 0)
+			(at 165.1 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2712,7 +2626,7 @@
 			)
 		)
 		(property "Description" ""
-			(at 160.02 123.19 0)
+			(at 165.1 113.03 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -2729,85 +2643,6 @@
 			(project "loracircle"
 				(path "/7f2cd56c-c37b-417e-90a4-797999c049b4"
 					(reference "#U$07")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Adafruit RFM+LoRa Breakout-eagle-import:HEADER-1X1ROUND")
-		(at 172.72 100.33 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "317bbe73-72b9-42cd-a436-6e6cfcb44904")
-		(property "Reference" "JP2"
-			(at 166.37 97.155 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.778 1.5113)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Value" "HEADER-1X1ROUND"
-			(at 166.37 105.41 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.778 1.5113)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Footprint" "Adafruit RFM+LoRa Breakout:1X01_ROUND"
-			(at 172.72 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 172.72 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 172.72 100.33 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "68c9f18d-3ca0-440e-9ee7-5b7615904369")
-		)
-		(instances
-			(project "loracircle"
-				(path "/7f2cd56c-c37b-417e-90a4-797999c049b4"
-					(reference "JP2")
 					(unit 1)
 				)
 			)
@@ -2846,7 +2681,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Footprint" "Adafruit RFM+LoRa Breakout:RFMHCW_SMT"
+		(property "Footprint" "LIBRARY:RFMHCW_SMT"
 			(at 149.86 90.17 0)
 			(hide yes)
 			(show_name no)
@@ -3009,6 +2844,264 @@
 			(project "loracircle"
 				(path "/7f2cd56c-c37b-417e-90a4-797999c049b4"
 					(reference "#U$03")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "CONMHF1-SMD-T:CONMHF1-SMD-T")
+		(at 170.18 105.41 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "45de20b2-1015-47c2-80b1-18527a730324")
+		(property "Reference" "J1"
+			(at 177.8 105.6639 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "CONMHF1-SMD-T"
+			(at 177.8 108.2039 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "CONMHF1-SMD-T:TE_CONMHF1-SMD-T"
+			(at 170.18 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Datasheet" ""
+			(at 170.18 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "U.FL/MHF1 Jack 50 Ohm PCB Surface Mount"
+			(at 170.18 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "MF" "Linx Technologies Inc."
+			(at 170.18 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "MAXIMUM_PACKAGE_HEIGHT" "1.31mm"
+			(at 170.18 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "CREATOR" "DIZAR"
+			(at 170.18 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Price" "None"
+			(at 170.18 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Package" "None"
+			(at 170.18 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Check_prices" "https://www.snapeda.com/parts/CONMHF1-SMD-T/TE+Connectivity/view-part/?ref=eda"
+			(at 170.18 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "STANDARD" "Manufacturer Recommendations"
+			(at 170.18 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "PARTREV" "09/22"
+			(at 170.18 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "VERIFIER" ""
+			(at 170.18 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "SnapEDA_Link" "https://www.snapeda.com/parts/CONMHF1-SMD-T/TE+Connectivity/view-part/?ref=snap"
+			(at 170.18 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "MP" "CONMHF1-SMD-T"
+			(at 170.18 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "CAD_BUILD" "TE OEM"
+			(at 170.18 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "Availability" "In Stock"
+			(at 170.18 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(property "MANUFACTURER" "TE Connectivity"
+			(at 170.18 105.41 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify bottom)
+			)
+		)
+		(pin "4"
+			(uuid "4dbc0431-90bf-4d8a-8596-9f0faeaa23e7")
+		)
+		(pin "3"
+			(uuid "046d12ef-a690-4416-853c-4e4b2e71a67b")
+		)
+		(pin "1"
+			(uuid "729d1578-204a-401f-afeb-f8cd6ceef853")
+		)
+		(pin "2"
+			(uuid "58033792-aed1-4639-8cd4-2e7337c70d1a")
+		)
+		(instances
+			(project "loracircle"
+				(path "/7f2cd56c-c37b-417e-90a4-797999c049b4"
+					(reference "J1")
 					(unit 1)
 				)
 			)
@@ -3204,7 +3297,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Footprint" "Adafruit RFM+LoRa Breakout:1X09_ROUND_70"
+		(property "Footprint" "LIBRARY:CONN_B9B-PH-SM4-TB_JST"
 			(at 238.76 72.39 0)
 			(hide yes)
 			(show_name no)
@@ -3306,7 +3399,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Adafruit RFM+LoRa Breakout:0805-NO"
+		(property "Footprint" "LIBRARY:0805-NO"
 			(at 205.74 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -3745,84 +3838,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Adafruit RFM+LoRa Breakout-eagle-import:GND")
-		(at 180.34 123.19 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "c2a0cf94-fb35-4a1c-82ba-b9d46e04bb4c")
-		(property "Reference" "#U$09"
-			(at 180.34 123.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "GND"
-			(at 178.816 125.73 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.0795)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Footprint" ""
-			(at 180.34 123.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 180.34 123.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 180.34 123.19 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "5f436ee3-9000-453a-8d23-4c6d553b7e46")
-		)
-		(instances
-			(project "loracircle"
-				(path "/7f2cd56c-c37b-417e-90a4-797999c049b4"
-					(reference "#U$09")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Adafruit RFM+LoRa Breakout-eagle-import:3.3V")
 		(at 198.12 57.15 0)
 		(unit 1)
@@ -3979,96 +3994,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Adafruit RFM+LoRa Breakout-eagle-import:SMACONNECTOR_EDGE_UFL")
-		(at 170.18 113.03 270)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "e0256d62-ac22-4162-9e1a-2c0ec3d5c93c")
-		(property "Reference" "X1"
-			(at 172.72 120.65 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.0795)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Value" "uFL/SMA"
-			(at 170.18 120.65 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.0795)
-				)
-				(justify left bottom)
-			)
-		)
-		(property "Footprint" "Adafruit RFM+LoRa Breakout:SMA_EDGELAUNCH_UFL"
-			(at 170.18 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 170.18 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" ""
-			(at 170.18 113.03 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "GND@1"
-			(uuid "6dbbbb2e-e3ad-4867-b863-03071db4cd73")
-		)
-		(pin "P"
-			(uuid "7ba4ada1-d993-4345-b537-6ebe16a19131")
-		)
-		(pin "GND@2"
-			(uuid "6a28091a-92a6-4e76-b4c8-dcfe11402b6c")
-		)
-		(pin "GND@3"
-			(uuid "b3dd88d0-c98e-43f4-a0f6-f4fbdf0c335a")
-		)
-		(pin "GND@4"
-			(uuid "885bf2b3-97d2-48cf-884d-3cbc6a523258")
-		)
-		(instances
-			(project "loracircle"
-				(path "/7f2cd56c-c37b-417e-90a4-797999c049b4"
-					(reference "X1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Adafruit RFM+LoRa Breakout-eagle-import:CAP_CERAMIC0805-NOOUTLINE")
 		(at 152.4 55.88 0)
 		(unit 1)
@@ -4099,7 +4024,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Adafruit RFM+LoRa Breakout:0805-NO"
+		(property "Footprint" "LIBRARY:0805-NO"
 			(at 152.4 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -4180,7 +4105,7 @@
 				)
 			)
 		)
-		(property "Footprint" "Adafruit RFM+LoRa Breakout:0805-NO"
+		(property "Footprint" "LIBRARY:0805-NO"
 			(at 198.12 67.31 0)
 			(hide yes)
 			(show_name no)
