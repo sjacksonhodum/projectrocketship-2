@@ -2365,7 +2365,7 @@
 				)
 			)
 		)
-		(property "Footprint" "LIBRARY:0805-NO"
+		(property "Footprint" "Capacitor_SMD:C_0603_1608Metric"
 			(at 143.51 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -2444,7 +2444,7 @@
 				)
 			)
 		)
-		(property "Footprint" "LIBRARY:0805-NO"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 190.5 97.79 0)
 			(hide yes)
 			(show_name no)
@@ -3297,7 +3297,7 @@
 				(justify left bottom)
 			)
 		)
-		(property "Footprint" "LIBRARY:CONN_B9B-PH-SM4-TB_JST"
+		(property "Footprint" "Connector_JST:JST_PH_B9B-PH-SM4-TB_1x09-1MP_P2.00mm_Vertical"
 			(at 238.76 72.39 0)
 			(hide yes)
 			(show_name no)
@@ -3399,7 +3399,7 @@
 				)
 			)
 		)
-		(property "Footprint" "LIBRARY:0805-NO"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 205.74 67.31 0)
 			(hide yes)
 			(show_name no)
@@ -4024,7 +4024,7 @@
 				)
 			)
 		)
-		(property "Footprint" "LIBRARY:0805-NO"
+		(property "Footprint" "Capacitor_SMD:C_0805_2012Metric"
 			(at 152.4 55.88 0)
 			(hide yes)
 			(show_name no)
@@ -4105,7 +4105,7 @@
 				)
 			)
 		)
-		(property "Footprint" "LIBRARY:0805-NO"
+		(property "Footprint" "Resistor_SMD:R_0603_1608Metric"
 			(at 198.12 67.31 0)
 			(hide yes)
 			(show_name no)
