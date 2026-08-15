@@ -611,12 +611,54 @@
           "label": "Datasheet",
           "name": "Datasheet",
           "show": true
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Device",
+          "name": "Sim.Device",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Sim.Pins",
+          "name": "Sim.Pins",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Manufacturer",
+          "name": "Manufacturer",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "Description",
+          "name": "Description",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "LCSC",
+          "name": "LCSC",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "#",
+          "name": "${ITEM_NUMBER}",
+          "show": false
+        },
+        {
+          "group_by": false,
+          "label": "KiLib_Generator",
+          "name": "KiLib_Generator",
+          "show": false
         }
       ],
       "filter_string": "",
       "group_symbols": true,
       "include_excluded_from_bom": true,
-      "name": "Default Editing",
+      "name": "",
       "sort_asc": true,
       "sort_field": "Reference"
     },
@@ -661,7 +703,7 @@
         "uuid": "a582df85-54b5-4502-ad28-1762afa22b26"
       }
     ],
-    "used_designators": "SW1,CN1-2,U9,R5-6,JP3,C17-20,#PWR26-27,#PWR29,#PWR33-35,#PWR47,#PWR49,#U$14-27,X1-2",
+    "used_designators": "P1,L1,#PWR1-42,#PWR47,#PWR49,#U$1-11,#U$14-27,C1-21,X1-2,Card1,JP3,R1-6,D1-8,U1-10,BZ1,SW1-2,CN1-2,J1-2",
     "variants": []
   },
   "sheets": [
