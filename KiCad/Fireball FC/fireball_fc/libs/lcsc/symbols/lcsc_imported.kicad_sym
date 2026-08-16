@@ -1908,4 +1908,352 @@
     )
   )
 
+
+(symbol "USB-TYPE-C-020"
+    (exclude_from_sim no)
+    (in_bom yes)
+    (on_board yes)
+    (property "Reference" "USB"
+      (at 0 1.27 0)
+      (effects
+        (font (size 1.27 1.27))
+      )
+    )
+    (property "Value" "USB-TYPE-C-020"
+      (at 0 -2.54 0)
+      (effects
+        (font (size 1.27 1.27))
+      )
+    )
+    (property "Footprint" "lcsc_footprints:C2927040_USB-SMD_USB-TYPE-C-020"
+      (at 0 -10.16 0)
+      (effects
+        (font (size 1.27 1.27))
+        (hide yes)
+      )
+    )
+    (property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2201121330_DEALON-USB-TYPE-C-020_C2927040.pdf"
+      (at -2.286 0.127 0)
+      (effects
+        (font (size 1.27 1.27))
+        (hide yes)
+      )
+    )
+    (property "Description" "USB-TYPE-C-020"
+      (at 0 0 0)
+      (effects
+        (font (size 1.27 1.27))
+        (hide yes)
+      )
+    )
+    (property "LCSC" "C2927040"
+      (at 0 0 0)
+      (effects
+        (font (size 1.27 1.27))
+        (hide yes)
+      )
+    )
+    (property "Manufacturer" "DEALON(德艺隆)"
+      (at 0 0 0)
+      (effects
+        (font (size 1.27 1.27))
+        (hide yes)
+      )
+    )
+    (symbol "USB-TYPE-C-020_1_1"
+      (pin unspecified line
+        (at -1.27 -19.05 90)
+        (length 2.54000508001016)
+        (name "SHELL"
+          (effects
+            (font (size 1 1))
+          )
+        )
+        (number "19"
+          (effects
+            (font (size 1 1))
+          )
+        )
+      )
+      (pin unspecified line
+        (at -1.27 19.05 270)
+        (length 2.54000508001016)
+        (name "SHELL"
+          (effects
+            (font (size 1 1))
+          )
+        )
+        (number "18"
+          (effects
+            (font (size 1 1))
+          )
+        )
+      )
+      (pin unspecified line
+        (at 16.51 13.97 180)
+        (length 2.54)
+        (name "GND"
+          (effects
+            (font (size 1 1))
+          )
+        )
+        (number "A12"
+          (effects
+            (font (size 1 1))
+          )
+        )
+      )
+      (pin unspecified line
+        (at 16.51 6.35 180)
+        (length 2.54)
+        (name "VBUS"
+          (effects
+            (font (size 1 1))
+          )
+        )
+        (number "A9"
+          (effects
+            (font (size 1 1))
+          )
+        )
+      )
+      (pin unspecified line
+        (at 16.51 3.81 180)
+        (length 2.54)
+        (name "SBU1"
+          (effects
+            (font (size 1 1))
+          )
+        )
+        (number "A8"
+          (effects
+            (font (size 1 1))
+          )
+        )
+      )
+      (pin unspecified line
+        (at 16.51 1.27 180)
+        (length 2.54)
+        (name "Dn1"
+          (effects
+            (font (size 1 1))
+          )
+        )
+        (number "A7"
+          (effects
+            (font (size 1 1))
+          )
+        )
+      )
+      (pin unspecified line
+        (at 16.51 -1.27 180)
+        (length 2.54)
+        (name "Dp1"
+          (effects
+            (font (size 1 1))
+          )
+        )
+        (number "A6"
+          (effects
+            (font (size 1 1))
+          )
+        )
+      )
+      (pin unspecified line
+        (at 16.51 -3.81 180)
+        (length 2.54)
+        (name "CC1"
+          (effects
+            (font (size 1 1))
+          )
+        )
+        (number "A5"
+          (effects
+            (font (size 1 1))
+          )
+        )
+      )
+      (pin unspecified line
+        (at 16.51 -6.35 180)
+        (length 2.54)
+        (name "VBUS"
+          (effects
+            (font (size 1 1))
+          )
+        )
+        (number "A4"
+          (effects
+            (font (size 1 1))
+          )
+        )
+      )
+      (pin unspecified line
+        (at 16.51 -13.97 180)
+        (length 2.54)
+        (name "GND"
+          (effects
+            (font (size 1 1))
+          )
+        )
+        (number "A1"
+          (effects
+            (font (size 1 1))
+          )
+        )
+      )
+      (pin unspecified line
+        (at -16.51 -13.97 0)
+        (length 2.54)
+        (name "GND"
+          (effects
+            (font (size 1 1))
+          )
+        )
+        (number "B12"
+          (effects
+            (font (size 1 1))
+          )
+        )
+      )
+      (pin unspecified line
+        (at -16.51 -6.35 0)
+        (length 2.54)
+        (name "VBUS"
+          (effects
+            (font (size 1 1))
+          )
+        )
+        (number "B9"
+          (effects
+            (font (size 1 1))
+          )
+        )
+      )
+      (pin unspecified line
+        (at -16.51 -3.81 0)
+        (length 2.54)
+        (name "SBU2"
+          (effects
+            (font (size 1 1))
+          )
+        )
+        (number "B8"
+          (effects
+            (font (size 1 1))
+          )
+        )
+      )
+      (pin unspecified line
+        (at -16.51 -1.27 0)
+        (length 2.54)
+        (name "Dn2"
+          (effects
+            (font (size 1 1))
+          )
+        )
+        (number "B7"
+          (effects
+            (font (size 1 1))
+          )
+        )
+      )
+      (pin unspecified line
+        (at -16.51 1.27 0)
+        (length 2.54)
+        (name "Dp2"
+          (effects
+            (font (size 1 1))
+          )
+        )
+        (number "B6"
+          (effects
+            (font (size 1 1))
+          )
+        )
+      )
+      (pin unspecified line
+        (at -16.51 3.81 0)
+        (length 2.54)
+        (name "CC2"
+          (effects
+            (font (size 1 1))
+          )
+        )
+        (number "B5"
+          (effects
+            (font (size 1 1))
+          )
+        )
+      )
+      (pin unspecified line
+        (at -16.51 6.35 0)
+        (length 2.54)
+        (name "VBUS"
+          (effects
+            (font (size 1 1))
+          )
+        )
+        (number "B4"
+          (effects
+            (font (size 1 1))
+          )
+        )
+      )
+      (pin unspecified line
+        (at -16.51 13.97 0)
+        (length 2.54)
+        (name "GND"
+          (effects
+            (font (size 1 1))
+          )
+        )
+        (number "B1"
+          (effects
+            (font (size 1 1))
+          )
+        )
+      )
+      (circle
+        (center -12.700025400050801 15.24003048006096)
+        (radius 0.381000762001524)
+        (stroke (width 0) (type default) (color 0 0 0 0))
+        (fill (type background))
+      )
+      (rectangle
+        (start -13.97002794005588 16.51003302006604)
+        (end 13.97002794005588 -16.51003302006604)
+        (stroke (width 0) (type default) (color 0 0 0 0))
+        (fill (type background))
+      )
+      (pin unspecified line
+        (at 1.27 19.05 270)
+        (length 2.54000508001016)
+        (name "SHELL"
+          (effects
+            (font (size 1 1))
+          )
+        )
+        (number "20"
+          (effects
+            (font (size 1 1))
+          )
+        )
+      )
+      (pin unspecified line
+        (at 1.27 -19.05 90)
+        (length 2.54000508001016)
+        (name "SHELL"
+          (effects
+            (font (size 1 1))
+          )
+        )
+        (number "17"
+          (effects
+            (font (size 1 1))
+          )
+        )
+      )
+    )
+  )
+
 )
