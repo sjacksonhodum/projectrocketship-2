@@ -229,164 +229,6 @@
 			)
 			(embedded_fonts no)
 		)
-		(symbol "Connector_Generic:Conn_01x02"
-			(pin_names
-				(offset 1.016)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "J"
-				(at 0 2.54 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Value" "Conn_01x02"
-				(at 0 -5.08 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Footprint" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "connector"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "Connector*:*_1x??_*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "Conn_01x02_1_1"
-				(rectangle
-					(start -1.27 1.27)
-					(end 1.27 -3.81)
-					(stroke
-						(width 0.254)
-						(type default)
-					)
-					(fill
-						(type background)
-					)
-				)
-				(rectangle
-					(start -1.27 0.127)
-					(end 0 -0.127)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(rectangle
-					(start -1.27 -2.413)
-					(end 0 -2.667)
-					(stroke
-						(width 0.1524)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(pin passive line
-					(at -5.08 0 0)
-					(length 3.81)
-					(name "Pin_1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -5.08 -2.54 0)
-					(length 3.81)
-					(name "Pin_2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
 		(symbol "Connector_Generic:Conn_01x04"
 			(pin_names
 				(offset 1.016)
@@ -593,183 +435,6 @@
 						)
 					)
 					(number "4"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-			)
-			(embedded_fonts no)
-		)
-		(symbol "Device:Buzzer"
-			(pin_names
-				(offset 0.0254)
-				(hide yes)
-			)
-			(exclude_from_sim no)
-			(in_bom yes)
-			(on_board yes)
-			(in_pos_files yes)
-			(duplicate_pin_numbers_are_jumpers no)
-			(property "Reference" "BZ"
-				(at 3.81 1.27 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Value" "Buzzer"
-				(at 3.81 -1.27 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-					(justify left)
-				)
-			)
-			(property "Footprint" ""
-				(at -0.635 2.54 90)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Datasheet" ""
-				(at -0.635 2.54 90)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "Description" "Buzzer, polarized"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_keywords" "quartz resonator ceramic"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(property "ki_fp_filters" "*Buzzer*"
-				(at 0 0 0)
-				(show_name no)
-				(do_not_autoplace no)
-				(hide yes)
-				(effects
-					(font
-						(size 1.27 1.27)
-					)
-				)
-			)
-			(symbol "Buzzer_0_1"
-				(polyline
-					(pts
-						(xy -1.651 1.905) (xy -1.143 1.905)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy -1.397 2.159) (xy -1.397 1.651)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(arc
-					(start 0 3.175)
-					(mid 3.1612 0)
-					(end 0 -3.175)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-				(polyline
-					(pts
-						(xy 0 3.175) (xy 0 -3.175)
-					)
-					(stroke
-						(width 0)
-						(type default)
-					)
-					(fill
-						(type none)
-					)
-				)
-			)
-			(symbol "Buzzer_1_1"
-				(pin passive line
-					(at -2.54 2.54 0)
-					(length 2.54)
-					(name "+"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "1"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-				)
-				(pin passive line
-					(at -2.54 -2.54 0)
-					(length 2.54)
-					(name "-"
-						(effects
-							(font
-								(size 1.27 1.27)
-							)
-						)
-					)
-					(number "2"
 						(effects
 							(font
 								(size 1.27 1.27)
@@ -4481,6 +4146,164 @@
 			)
 			(embedded_fonts no)
 		)
+		(symbol "lcsc_imported:CPT-9019S-SMT-TR"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "BUZ"
+				(at 0 1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "CPT-9019S-SMT-TR"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "lcsc_footprints:C95163_BUZ-SMD_L9_0-W9_0-P8_00-LS9_3"
+				(at 0 -10.16 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2410122011_CUI-CPT-9019S-SMT-TR_C95163.pdf"
+				(at -2.286 0.127 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "CPT-9019S-SMT-TR"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "LCSC" "C95163"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Manufacturer" "CUI"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "CPT-9019S-SMT-TR_1_1"
+				(polyline
+					(pts
+						(xy -1.27 0.254) (xy -0.254 0.254)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy -0.762 0.762) (xy -0.762 -0.254)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(polyline
+					(pts
+						(xy 1.524 -4.064) (xy -2.54 -4.064) (xy -2.54 1.524) (xy 1.524 1.524) (xy 5.08 5.08) (xy 5.08 -7.62)
+						(xy 1.524 -4.064)
+					)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type none)
+					)
+				)
+				(pin unspecified line
+					(at -7.62 0 0)
+					(length 5.08)
+					(name "+"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -7.62 -2.54 0)
+					(length 5.08)
+					(name "-"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
 		(symbol "lcsc_imported:FTC404030S1R0MGCA"
 			(exclude_from_sim no)
 			(in_bom yes)
@@ -4640,6 +4463,185 @@
 						)
 					)
 					(number "2"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+			)
+			(embedded_fonts no)
+		)
+		(symbol "lcsc_imported:HDGC2001WR-S-2P"
+			(exclude_from_sim no)
+			(in_bom yes)
+			(on_board yes)
+			(in_pos_files yes)
+			(duplicate_pin_numbers_are_jumpers no)
+			(property "Reference" "CN"
+				(at 0 1.27 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Value" "HDGC2001WR-S-2P"
+				(at 0 -2.54 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Footprint" "lcsc_footprints:C2936224_CONN-SMD_2P-P2_00_HDGC_HDGC2001WR-S-2P"
+				(at 0 -10.16 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2201121730_HDGC-HDGC2001WR-S-2P_C2936224.pdf"
+				(at -2.286 0.127 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Description" "HDGC2001WR-S-2P"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "LCSC" "C2936224"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(property "Manufacturer" "HDGC(华德共创)"
+				(at 0 0 0)
+				(show_name no)
+				(do_not_autoplace no)
+				(hide yes)
+				(effects
+					(font
+						(size 1.27 1.27)
+					)
+				)
+			)
+			(symbol "HDGC2001WR-S-2P_1_1"
+				(rectangle
+					(start -1.27 3.81)
+					(end 5.08 -3.81)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(circle
+					(center 0 2.54)
+					(radius 0.381)
+					(stroke
+						(width 0)
+						(type default)
+					)
+					(fill
+						(type background)
+					)
+				)
+				(pin unspecified line
+					(at -3.81 1.27 0)
+					(length 2.54)
+					(name "1"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "1"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at -3.81 -1.27 0)
+					(length 2.54)
+					(name "2"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "2"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 3.81 -6.35 90)
+					(length 2.54)
+					(name "3"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "3"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+				)
+				(pin unspecified line
+					(at 3.81 6.35 270)
+					(length 2.54)
+					(name "4"
+						(effects
+							(font
+								(size 1 1)
+							)
+						)
+					)
+					(number "4"
 						(effects
 							(font
 								(size 1 1)
@@ -8206,6 +8208,12 @@
 		(uuid "168de7d0-7f00-4ff3-8215-01dbb86f69d2")
 	)
 	(junction
+		(at 326.39 127)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "1822c7b7-8e84-4801-9d1e-78592fca4e8c")
+	)
+	(junction
 		(at 105.41 64.77)
 		(diameter 0)
 		(color 0 0 0 0)
@@ -8618,6 +8626,12 @@
 		(diameter 0)
 		(color 0 0 0 0)
 		(uuid "f916c01e-d4ed-4473-a099-839f57b720e1")
+	)
+	(junction
+		(at 317.5 132.08)
+		(diameter 0)
+		(color 0 0 0 0)
+		(uuid "fae4c813-8e8e-474a-958c-f729a878c2f4")
 	)
 	(junction
 		(at 248.92 17.78)
@@ -9289,7 +9303,7 @@
 	)
 	(wire
 		(pts
-			(xy 314.96 127) (xy 318.77 127)
+			(xy 325.12 127) (xy 326.39 127)
 		)
 		(stroke
 			(width 0)
@@ -9406,6 +9420,16 @@
 			(type default)
 		)
 		(uuid "3d86a3bd-daae-4530-928d-7d6eb9dd53bd")
+	)
+	(wire
+		(pts
+			(xy 317.5 132.08) (xy 326.39 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "3e494fc5-ea88-4af3-a7f7-6fdbbef32b81")
 	)
 	(wire
 		(pts
@@ -9839,6 +9863,16 @@
 	)
 	(wire
 		(pts
+			(xy 326.39 127) (xy 328.93 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6508a988-4e8d-4a49-ae6d-3269bca88954")
+	)
+	(wire
+		(pts
 			(xy 293.37 43.18) (xy 300.99 43.18)
 		)
 		(stroke
@@ -9886,6 +9920,16 @@
 			(type default)
 		)
 		(uuid "6cb1737e-a4d4-4788-878a-c7233139368f")
+	)
+	(wire
+		(pts
+			(xy 314.96 119.38) (xy 314.96 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "6e281cde-18b2-4d5f-8714-b4a9530c568d")
 	)
 	(wire
 		(pts
@@ -10309,6 +10353,16 @@
 	)
 	(wire
 		(pts
+			(xy 326.39 132.08) (xy 326.39 127)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "97b1dfaf-4d01-482e-a6b7-123aa138e178")
+	)
+	(wire
+		(pts
 			(xy 391.16 44.45) (xy 391.16 29.21)
 		)
 		(stroke
@@ -10606,6 +10660,16 @@
 			(type default)
 		)
 		(uuid "b412f968-91a6-4d52-8d77-8ff144b5bb64")
+	)
+	(wire
+		(pts
+			(xy 314.96 132.08) (xy 317.5 132.08)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "b527a3b9-ecb8-4fe2-b410-db37fe7d2aaa")
 	)
 	(wire
 		(pts
@@ -11269,6 +11333,16 @@
 	)
 	(wire
 		(pts
+			(xy 317.5 119.38) (xy 314.96 119.38)
+		)
+		(stroke
+			(width 0)
+			(type default)
+		)
+		(uuid "f2d81392-eabb-45aa-990c-03ab734d7406")
+	)
+	(wire
+		(pts
 			(xy 223.52 33.02) (xy 223.52 53.34)
 		)
 		(stroke
@@ -11808,7 +11882,7 @@
 		(uuid "82a18a9e-7478-4930-8295-05f25606aaff")
 	)
 	(label "BUZZER"
-		(at 354.33 149.86 180)
+		(at 350.52 151.13 180)
 		(effects
 			(font
 				(size 1.27 1.27)
@@ -13051,7 +13125,7 @@
 	)
 	(symbol
 		(lib_id "power:+BATT")
-		(at 325.12 124.46 270)
+		(at 335.28 124.46 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -13062,7 +13136,7 @@
 		(fields_autoplaced yes)
 		(uuid "1d071a0e-67fa-49c9-9be4-02d39c61a8e2")
 		(property "Reference" "#PWR031"
-			(at 321.31 124.46 0)
+			(at 331.47 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13073,7 +13147,7 @@
 			)
 		)
 		(property "Value" "+BATT"
-			(at 328.93 124.4599 90)
+			(at 339.09 124.4599 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -13084,7 +13158,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 325.12 124.46 0)
+			(at 335.28 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13095,7 +13169,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 325.12 124.46 0)
+			(at 335.28 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13106,7 +13180,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"+BATT\""
-			(at 325.12 124.46 0)
+			(at 335.28 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -13694,96 +13768,6 @@
 			(project "fireball_fc"
 				(path "/a582df85-54b5-4502-ad28-1762afa22b26"
 					(reference "D7")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
-		(lib_id "Connector_Generic:Conn_01x02")
-		(at 309.88 127 180)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(uuid "2ad30e73-982e-4c05-9285-16e653734e3d")
-		(property "Reference" "J2"
-			(at 306.578 115.824 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Value" "Conn_01x02"
-			(at 306.578 118.364 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical"
-			(at 309.88 127 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 309.88 127 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"
-			(at 309.88 127 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "KiLib_Generator" "connector/pin_header_socket"
-			(at 309.88 127 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "2"
-			(uuid "22bf4a3c-714a-4ac6-b5f4-57a0c20ffe89")
-		)
-		(pin "1"
-			(uuid "c4cdee35-b1f6-498e-9b6e-b235b0418aba")
-		)
-		(instances
-			(project "fireball_fc"
-				(path "/a582df85-54b5-4502-ad28-1762afa22b26"
-					(reference "J2")
 					(unit 1)
 				)
 			)
@@ -14851,7 +14835,7 @@
 	)
 	(symbol
 		(lib_id "Switch:SW_SPST")
-		(at 320.04 124.46 0)
+		(at 330.2 124.46 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -14861,7 +14845,7 @@
 		(dnp no)
 		(uuid "4cd89cfd-c6bc-4421-8df9-80130bd0f09d")
 		(property "Reference" "SW2"
-			(at 321.818 117.856 0)
+			(at 331.978 117.856 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14871,7 +14855,7 @@
 			)
 		)
 		(property "Value" "MAIN POWER"
-			(at 321.818 120.396 0)
+			(at 331.978 120.396 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -14881,7 +14865,7 @@
 			)
 		)
 		(property "Footprint" "Connector_PinSocket_2.54mm:PinSocket_1x02_P2.54mm_Vertical"
-			(at 320.04 124.46 0)
+			(at 330.2 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14892,7 +14876,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 320.04 124.46 0)
+			(at 330.2 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -14903,7 +14887,7 @@
 			)
 		)
 		(property "Description" "Single Pole Single Throw (SPST) switch"
-			(at 320.04 124.46 0)
+			(at 330.2 124.46 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15009,7 +14993,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 354.33 154.94 270)
+		(at 350.52 153.67 270)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -15020,7 +15004,7 @@
 		(fields_autoplaced yes)
 		(uuid "4dafd5c5-21ca-4ba4-9b43-83be8e76b4b1")
 		(property "Reference" "#PWR033"
-			(at 347.98 154.94 0)
+			(at 344.17 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15031,7 +15015,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 350.52 154.9399 90)
+			(at 346.71 153.6699 90)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -15042,7 +15026,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 354.33 154.94 0)
+			(at 350.52 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15053,7 +15037,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 354.33 154.94 0)
+			(at 350.52 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -15064,7 +15048,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 354.33 154.94 0)
+			(at 350.52 153.67 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -16628,88 +16612,6 @@
 		)
 	)
 	(symbol
-		(lib_id "Device:Buzzer")
-		(at 356.87 152.4 0)
-		(unit 1)
-		(body_style 1)
-		(exclude_from_sim no)
-		(in_bom yes)
-		(on_board yes)
-		(in_pos_files yes)
-		(dnp no)
-		(fields_autoplaced yes)
-		(uuid "700bf5a0-ce62-4602-a756-5b04ea11c19b")
-		(property "Reference" "BZ1"
-			(at 360.68 151.1299 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Value" "Buzzer"
-			(at 360.68 153.6699 0)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-				(justify left)
-			)
-		)
-		(property "Footprint" "Buzzer_Beeper:Buzzer_CUI_CPT-9019S-SMT"
-			(at 356.235 149.86 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Datasheet" ""
-			(at 356.235 149.86 90)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(property "Description" "Buzzer, polarized"
-			(at 356.87 152.4 0)
-			(hide yes)
-			(show_name no)
-			(do_not_autoplace no)
-			(effects
-				(font
-					(size 1.27 1.27)
-				)
-			)
-		)
-		(pin "1"
-			(uuid "3fc33ec2-5ea8-4203-b442-0793b080aecc")
-		)
-		(pin "2"
-			(uuid "06612a0d-2d60-44e6-996b-c85624cf35ef")
-		)
-		(instances
-			(project "fireball_fc"
-				(path "/a582df85-54b5-4502-ad28-1762afa22b26"
-					(reference "BZ1")
-					(unit 1)
-				)
-			)
-		)
-	)
-	(symbol
 		(lib_id "Device:R_Small")
 		(at 241.3 92.71 180)
 		(unit 1)
@@ -17110,6 +17012,116 @@
 			(project "fireball_fc"
 				(path "/a582df85-54b5-4502-ad28-1762afa22b26"
 					(reference "#PWR027")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "lcsc_imported:HDGC2001WR-S-2P")
+		(at 321.31 125.73 180)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(fields_autoplaced yes)
+		(uuid "7d5a9613-b8e4-4edc-bcb8-3d013a3f09b2")
+		(property "Reference" "CN1"
+			(at 314.96 124.4599 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "HDGC2001WR-S-2P"
+			(at 314.96 126.9999 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "lcsc_footprints:C2936224_CONN-SMD_2P-P2_00_HDGC_HDGC2001WR-S-2P"
+			(at 321.31 115.57 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://wmsc.lcsc.com/wmsc/upload/file/pdf/v2/lcsc/2201121730_HDGC-HDGC2001WR-S-2P_C2936224.pdf"
+			(at 323.596 125.857 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "HDGC2001WR-S-2P"
+			(at 321.31 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C2936224"
+			(at 321.31 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "HDGC(华德共创)"
+			(at 321.31 125.73 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b307ed6f-5dfb-470e-b7d2-bda59715ac0b")
+		)
+		(pin "2"
+			(uuid "39c00bc8-be38-47b6-87fa-e90c754a028a")
+		)
+		(pin "4"
+			(uuid "52493990-ce47-4f10-89e2-bd4cb814c372")
+		)
+		(pin "3"
+			(uuid "401d4a2c-b0e8-4708-8401-30c1599068f1")
+		)
+		(instances
+			(project "fireball_fc"
+				(path "/a582df85-54b5-4502-ad28-1762afa22b26"
+					(reference "CN1")
 					(unit 1)
 				)
 			)
@@ -17864,7 +17876,7 @@
 	)
 	(symbol
 		(lib_id "power:GND")
-		(at 318.77 127 0)
+		(at 328.93 127 0)
 		(unit 1)
 		(body_style 1)
 		(exclude_from_sim no)
@@ -17874,7 +17886,7 @@
 		(dnp no)
 		(uuid "9ac40389-9ee0-4ad5-8046-ebb2a962b327")
 		(property "Reference" "#PWR029"
-			(at 318.77 133.35 0)
+			(at 328.93 133.35 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17885,7 +17897,7 @@
 			)
 		)
 		(property "Value" "GND"
-			(at 318.77 132.08 0)
+			(at 328.93 132.08 0)
 			(show_name no)
 			(do_not_autoplace no)
 			(effects
@@ -17895,7 +17907,7 @@
 			)
 		)
 		(property "Footprint" ""
-			(at 318.77 127 0)
+			(at 328.93 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17906,7 +17918,7 @@
 			)
 		)
 		(property "Datasheet" ""
-			(at 318.77 127 0)
+			(at 328.93 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -17917,7 +17929,7 @@
 			)
 		)
 		(property "Description" "Power symbol creates a global label with name \"GND\" , ground"
-			(at 318.77 127 0)
+			(at 328.93 127 0)
 			(hide yes)
 			(show_name no)
 			(do_not_autoplace no)
@@ -18294,6 +18306,109 @@
 			(project "fireball_fc"
 				(path "/a582df85-54b5-4502-ad28-1762afa22b26"
 					(reference "U9")
+					(unit 1)
+				)
+			)
+		)
+	)
+	(symbol
+		(lib_id "lcsc_imported:CPT-9019S-SMT-TR")
+		(at 358.14 151.13 0)
+		(unit 1)
+		(body_style 1)
+		(exclude_from_sim no)
+		(in_bom yes)
+		(on_board yes)
+		(in_pos_files yes)
+		(dnp no)
+		(uuid "a858c760-f72b-4dda-8dee-c125c4e5caf3")
+		(property "Reference" "BUZ1"
+			(at 342.138 157.988 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Value" "CPT-9019S-SMT-TR"
+			(at 342.138 160.528 0)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+				(justify left)
+			)
+		)
+		(property "Footprint" "lcsc_footprints:C95163_BUZ-SMD_L9_0-W9_0-P8_00-LS9_3"
+			(at 358.14 161.29 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Datasheet" "https://www.lcsc.com/datasheet/lcsc_datasheet_2410122011_CUI-CPT-9019S-SMT-TR_C95163.pdf"
+			(at 355.854 151.003 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Description" "CPT-9019S-SMT-TR"
+			(at 358.14 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "LCSC" "C95163"
+			(at 358.14 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(property "Manufacturer" "CUI"
+			(at 358.14 151.13 0)
+			(hide yes)
+			(show_name no)
+			(do_not_autoplace no)
+			(effects
+				(font
+					(size 1.27 1.27)
+				)
+			)
+		)
+		(pin "1"
+			(uuid "b6ec6153-30c4-460e-8f07-221cf1120296")
+		)
+		(pin "2"
+			(uuid "94e9dd2c-9fa9-442e-9164-94ba77650349")
+		)
+		(instances
+			(project "fireball_fc"
+				(path "/a582df85-54b5-4502-ad28-1762afa22b26"
+					(reference "BUZ1")
 					(unit 1)
 				)
 			)
