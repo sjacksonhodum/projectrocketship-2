@@ -1,0 +1,1394 @@
+<title>Flight Log Viewer</title>
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.0/chart.umd.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.128.0/three.min.js"></script>
+<style>
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --surface-2: #1c2330;
+  --fg: #e6edf3;
+  --muted: #8b949e;
+  --border: #2a313c;
+  --accent: #ff9f1c;
+  --accent-2: #4cc9f0;
+  --good: #3fb950;
+  --warn: #d4a017;
+  --bad: #f85149;
+  color-scheme: dark;
+}
+@media (prefers-color-scheme: light) {
+  :root:not([data-theme="dark"]) {
+    --bg: #f7f5f0;
+    --surface: #ffffff;
+    --surface-2: #eef0f4;
+    --fg: #1b1f24;
+    --muted: #6b7280;
+    --border: #dcdfe4;
+    --accent: #c9710a;
+    --accent-2: #0b7fa6;
+    --good: #1a7f37;
+    --warn: #9a6700;
+    --bad: #cf222e;
+    color-scheme: light;
+  }
+}
+:root[data-theme="light"] {
+  --bg: #f7f5f0;
+  --surface: #ffffff;
+  --surface-2: #eef0f4;
+  --fg: #1b1f24;
+  --muted: #6b7280;
+  --border: #dcdfe4;
+  --accent: #c9710a;
+  --accent-2: #0b7fa6;
+  --good: #1a7f37;
+  --warn: #9a6700;
+  --bad: #cf222e;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  padding-inline: 16px;
+}
+.wrap { max-width: 1180px; margin: 0 auto; }
+
+h1, h2, h3 { font-family: 'IBM Plex Mono', 'IBM Plex Sans', monospace; letter-spacing: -0.01em; text-wrap: balance; margin: 0; }
+.mono { font-family: 'IBM Plex Mono', monospace; font-variant-numeric: tabular-nums; }
+.muted { color: var(--muted); }
+
+header.top {
+  position: sticky;
+  top: env(safe-area-inset-top, 0px);
+  z-index: 20;
+  background: var(--bg);
+  padding-top: 18px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.title-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.title-row h1 { font-size: 1.3rem; font-weight: 700; }
+.title-row .subtitle { font-size: 0.78rem; color: var(--muted); }
+
+.loadbar {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.btn {
+  font: inherit;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  background: var(--surface);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+.btn:hover { border-color: var(--accent); color: var(--accent); }
+.btn.primary { background: var(--accent); color: #1a1205; border-color: var(--accent); }
+.btn.primary:hover { filter: brightness(1.08); color: #1a1205; }
+#fileInput { display: none; }
+.dropzone {
+  border: 1px dashed var(--border);
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 0.72rem;
+  color: var(--muted);
+}
+.dropzone.drag { border-color: var(--accent); color: var(--accent); }
+
+.chips { display: flex; gap: 8px; flex-wrap: wrap; }
+.chip {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 10px;
+  min-width: 92px;
+}
+.chip .k { font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+.chip .v { font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 0.92rem; font-variant-numeric: tabular-nums; }
+.chip .v.good { color: var(--good); }
+.chip .v.warn { color: var(--warn); }
+.chip .v.bad { color: var(--bad); }
+
+.tabs { display: flex; gap: 4px; flex-wrap: wrap; }
+.tab {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.74rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  background: transparent;
+  color: var(--muted);
+  border: 1px solid transparent;
+  border-bottom: 2px solid transparent;
+  padding: 6px 10px;
+  cursor: pointer;
+}
+.tab.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+main { padding-top: 18px; padding-bottom: 40px; }
+.panel { display: none; }
+.panel.active { display: block; }
+
+.empty {
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: var(--surface);
+  padding: 28px 22px;
+  margin-top: 18px;
+}
+.empty h2 { font-size: 1.05rem; margin-bottom: 10px; }
+.empty ol { margin: 0 0 14px 0; padding-left: 22px; line-height: 1.7; }
+.empty code {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 1px 6px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.86em;
+}
+.empty textarea {
+  width: 100%;
+  min-height: 140px;
+  margin-top: 6px;
+  background: var(--surface-2);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.78rem;
+  padding: 10px;
+}
+
+.grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px; }
+@media (max-width: 760px) { .grid2 { grid-template-columns: 1fr; } }
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+  min-width: 0;
+}
+.card h3 { font-size: 0.82rem; text-transform: uppercase; letter-spacing: 0.03em; color: var(--muted); margin-bottom: 10px; }
+.card canvas { width: 100% !important; }
+.card.wide { grid-column: 1 / -1; }
+
+.tablewrap { overflow-x: auto; border: 1px solid var(--border); border-radius: 10px; margin-top: 14px; }
+table { border-collapse: collapse; width: 100%; font-size: 0.78rem; }
+th, td {
+  font-family: 'IBM Plex Mono', monospace;
+  font-variant-numeric: tabular-nums;
+  padding: 6px 10px;
+  text-align: right;
+  white-space: nowrap;
+  border-bottom: 1px solid var(--border);
+}
+th:first-child, td:first-child { text-align: left; }
+thead th {
+  position: sticky;
+  top: 0;
+  background: var(--surface-2);
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-size: 0.66rem;
+  text-align: right;
+}
+thead th:first-child { text-align: left; }
+tbody tr:hover { background: var(--surface-2); }
+.flagset { display: flex; gap: 3px; flex-wrap: nowrap; justify-content: flex-end; }
+.flag {
+  font-size: 0.6rem;
+  font-weight: 700;
+  padding: 1px 4px;
+  border-radius: 3px;
+  background: var(--surface-2);
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
+.flag.on { background: var(--good); color: #06240f; border-color: var(--good); }
+
+.tablehead-row { display: flex; justify-content: space-between; align-items: baseline; margin-top: 18px; gap: 10px; flex-wrap: wrap; }
+.tablehead-row p { font-size: 0.76rem; color: var(--muted); }
+
+.track-wrap { position: relative; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--surface-2); }
+.track-wrap canvas { display: block; width: 100%; height: 420px; }
+.track-empty { padding: 40px 20px; text-align: center; color: var(--muted); font-size: 0.85rem; }
+
+.pb-controls {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 14px;
+}
+.pb-controls input[type="range"] {
+  flex: 1 1 240px;
+  min-width: 0;
+  accent-color: var(--accent);
+}
+.pb-controls select {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 0.76rem;
+  background: var(--surface-2);
+  color: var(--fg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 6px 8px;
+}
+.pb-time {
+  font-family: 'IBM Plex Mono', monospace;
+  font-variant-numeric: tabular-nums;
+  font-size: 0.82rem;
+  min-width: 15ch;
+}
+.pb-time .utc { color: var(--muted); font-size: 0.76rem; display: block; }
+
+.pb-main { display: flex; gap: 16px; margin-top: 16px; flex-wrap: wrap; }
+.pb-3d-card { flex: 1 1 420px; min-width: 0; }
+.pb-readout-card { flex: 1 1 280px; min-width: 0; }
+#threeCanvas { display: block; width: 100%; height: 380px; border-radius: 8px; background: var(--surface-2); touch-action: none; cursor: grab; }
+#threeCanvas:active { cursor: grabbing; }
+.pb-hint { font-size: 0.68rem; color: var(--muted); margin-top: 6px; }
+
+.readout-list { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+@media (max-width: 480px) { .readout-list { grid-template-columns: 1fr; } }
+.readout-item {
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 8px 10px;
+}
+.readout-item .k { font-size: 0.64rem; text-transform: uppercase; letter-spacing: 0.04em; color: var(--muted); }
+.readout-item .v { font-family: 'IBM Plex Mono', monospace; font-weight: 600; font-size: 0.9rem; font-variant-numeric: tabular-nums; }
+.readout-item .v.bad { color: var(--bad); }
+.readout-item .v.good { color: var(--good); }
+
+footer { color: var(--muted); font-size: 0.7rem; padding: 10px 0 30px; text-align: center; }
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <div class="title-row">
+      <h1>Flight Log Viewer</h1>
+      <div class="subtitle">decodes RP2040 rocket flight-computer EEPROM dumps (shared/packet.h protocol)</div>
+    </div>
+    <div class="loadbar">
+      <button class="btn primary" id="btnSerial">Connect to rocket (Web Serial)</button>
+      <button class="btn" id="btnLoad">Load dump file</button>
+      <input type="file" id="fileInput" accept=".txt,.log,text/plain">
+      <button class="btn" id="btnPaste">Paste text instead</button>
+      <button class="btn" id="btnSample" title="Load a short synthetic example so you can see what this looks like">Load example</button>
+      <span class="dropzone" id="dropHint">or drag a .txt dump file anywhere on this page</span>
+    </div>
+    <div class="dropzone" id="serialStatus" hidden></div>
+    <div class="chips" id="chips" hidden></div>
+    <div class="tabs" id="tabs" hidden>
+      <button class="tab active" data-tab="overview">Overview</button>
+      <button class="tab" data-tab="playback">Playback</button>
+      <button class="tab" data-tab="gps">GPS track</button>
+      <button class="tab" data-tab="fast">Fast log</button>
+      <button class="tab" data-tab="status">Status log</button>
+      <button class="tab" data-tab="orientation">Orientation log</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="empty" id="emptyState">
+      <h2>How to get a dump off the rocket</h2>
+      <ol>
+        <li><strong>Easiest:</strong> click <strong>Connect to rocket (Web Serial)</strong> above, pick the rocket's USB port, and it sends <code>DUMP</code> and loads the result automatically. Needs Chrome or Edge, and the rocket connected directly over USB (not through the ground station). If that button is disabled or fails, your browser or this page's sandbox doesn't allow direct serial access - use the manual steps below instead. If the connection drops partway through (a flaky USB cable/port), the button relabels itself <strong>Resume dump (from byte N)</strong> - reconnect and click it again to pick up exactly where it left off instead of starting over.</li>
+        <li><strong>Manual fallback:</strong> connect the rocket directly to your computer over USB, open a serial connection at <code>115200</code> baud, and log it to a file. Easiest with PlatformIO, from the <code>RP2040</code> project folder:
+          <br><code class="mono">pio device monitor -b 115200 --filter log2file</code>
+          <br>(writes a timestamped <code>.log</code> file alongside logging to your terminal) - or use your Arduino IDE Serial Monitor and copy the output by hand.
+        </li>
+        <li>Type <code>DUMP</code> and press enter. The rocket prints <code>&num; FLASH DUMP START</code>, one hex line per logged packet, then <code>&num; FLASH DUMP END</code>.</li>
+        <li>Load that file below, or paste the text directly. Lines that aren't packets (anything starting with <code>&num;</code>) are ignored automatically, so it's fine to paste the whole terminal capture.</li>
+      </ol>
+      <textarea id="pasteArea" placeholder="Paste DUMP output here, e.g.&#10;A5 5A 01 01 22 00 30 1A 00 00 00 00 00 00 00 00 00 00 7A FF C9 01 DE 00 3F 00 63 F0 56 1D 7A FC F9 86 01 00 FA 00 39 CA"></textarea>
+      <div style="margin-top:10px; display:flex; gap:8px;">
+        <button class="btn primary" id="btnParsePaste">Parse pasted text</button>
+      </div>
+    </div>
+
+    <div id="panels" hidden>
+      <div class="panel active" id="panel-overview">
+        <div class="grid2">
+          <div class="card"><h3>Altitude (ft)</h3><canvas id="chartAlt"></canvas></div>
+          <div class="card"><h3>Battery &amp; flash used</h3><canvas id="chartPower"></canvas></div>
+          <div class="card"><h3>Acceleration (g)</h3><canvas id="chartAccel"></canvas></div>
+          <div class="card"><h3>Gyro (deg/s)</h3><canvas id="chartGyro"></canvas></div>
+          <div class="card"><h3>LoRa link (as measured by ground station)</h3><canvas id="chartRadio"></canvas></div>
+          <div class="card"><h3>GPS satellites in use</h3><canvas id="chartSats"></canvas></div>
+        </div>
+      </div>
+
+      <div class="panel" id="panel-playback">
+        <div class="pb-controls">
+          <button class="btn primary" id="pbPlayPause">Play</button>
+          <input type="range" id="pbScrub" min="0" max="1000" value="0" step="1">
+          <select id="pbSpeed">
+            <option value="0.25">0.25x</option>
+            <option value="1" selected>1x</option>
+            <option value="2">2x</option>
+            <option value="5">5x</option>
+            <option value="10">10x</option>
+            <option value="30">30x</option>
+          </select>
+          <button class="btn" id="pbJumpLaunch" title="Jumps to the first sample where acceleration crosses ~2g">Launch</button>
+          <button class="btn" id="pbJumpApogee" title="Jumps to the highest recorded altitude">Apogee</button>
+          <div class="pb-time"><span id="pbTimeRel">T+0.00s</span><span class="utc" id="pbTimeUtc">&#8211;</span></div>
+        </div>
+
+        <div class="pb-main">
+          <div class="card pb-3d-card">
+            <h3>Attitude</h3>
+            <canvas id="threeCanvas"></canvas>
+            <p class="pb-hint">Drag to orbit the camera. Nose points along the rocket's local +Y at calibration time (<code class="mono">CMD_CALIBRATE_IMU</code>) - assumes that was done with the rocket pointed straight up. Grey when no orientation packet has arrived yet.</p>
+          </div>
+          <div class="card pb-readout-card">
+            <h3>Readout at cursor</h3>
+            <div class="readout-list" id="pbReadout"></div>
+          </div>
+        </div>
+
+        <div class="card" style="margin-top:16px;">
+          <h3>Altitude - drag the chart or the slider above</h3>
+          <canvas id="chartPlayback"></canvas>
+        </div>
+      </div>
+
+      <div class="panel" id="panel-gps">
+        <div class="track-wrap">
+          <canvas id="gpsCanvas"></canvas>
+          <div class="track-empty" id="gpsEmpty" hidden>No GPS fix recorded in this log - lat/lon stay at 0,0 until the rocket gets a 3D fix.</div>
+        </div>
+        <p class="muted" style="margin-top:10px; font-size:0.78rem;">Path built from every FAST packet with <code class="mono">STATUS_GPS_FIX</code> set. Marker colors fade from <span style="color:var(--accent-2)">cyan (earliest)</span> to <span style="color:var(--accent)">amber (latest)</span>.</p>
+      </div>
+
+      <div class="panel" id="panel-fast">
+        <div class="tablehead-row"><h3>Fast packets (20 Hz log / 8 Hz radio - GPS, IMU, baro, flags)</h3><p id="fastCount"></p></div>
+        <div class="tablewrap"><table id="tableFast"></table></div>
+      </div>
+
+      <div class="panel" id="panel-status">
+        <div class="tablehead-row"><h3>Status packets (0.5 Hz - battery, flash, radio link, GPS time)</h3><p id="statusCount"></p></div>
+        <div class="tablewrap"><table id="tableStatus"></table></div>
+      </div>
+
+      <div class="panel" id="panel-orientation">
+        <div class="tablehead-row"><h3>Orientation packets (2 Hz - Madgwick quaternion)</h3><p id="orientationCount"></p></div>
+        <div class="tablewrap"><table id="tableOrientation"></table></div>
+      </div>
+    </div>
+  </main>
+
+  <footer>Parses entirely in your browser - nothing is uploaded anywhere. Protocol: shared/packet.h, PROTOCOL_VERSION 1.</footer>
+</div>
+
+<script>
+(function () {
+  "use strict";
+
+  const MAGIC_0 = 0xA5, MAGIC_1 = 0x5A, PROTOCOL_VERSION = 1;
+  const PACKET_FAST = 0x01, PACKET_STATUS = 0x02, PACKET_ORIENTATION = 0x03;
+  const PACKET_LENGTHS = { 1: 40, 2: 32, 3: 22 };
+  const EEPROM_DATA_START = 16;
+  const STATUS_BITS = [
+    ["Rec", 1 << 0], ["5V", 1 << 1], ["Fix", 1 << 2], ["GPS", 1 << 3],
+    ["Baro", 1 << 4], ["IMU", 1 << 5], ["Flash", 1 << 6], ["LoRa", 1 << 7],
+  ];
+
+  function crc16(bytes, len) {
+    let crc = 0xFFFF;
+    for (let i = 0; i < len; i++) {
+      crc ^= (bytes[i] << 8) & 0xFFFF;
+      for (let b = 0; b < 8; b++) {
+        crc = (crc & 0x8000) ? (((crc << 1) ^ 0x1021) & 0xFFFF) : ((crc << 1) & 0xFFFF);
+      }
+    }
+    return crc & 0xFFFF;
+  }
+
+  function u16(b, o) { return b[o] | (b[o + 1] << 8); }
+  function i16(b, o) { const v = u16(b, o); return v > 0x7FFF ? v - 0x10000 : v; }
+  function u32(b, o) { return (b[o] | (b[o + 1] << 8) | (b[o + 2] << 16) | (b[o + 3] << 24)) >>> 0; }
+  function i32(b, o) { const v = u32(b, o); return v > 0x7FFFFFFF ? v - 0x100000000 : v; }
+  function i8(v) { return v > 0x7F ? v - 0x100 : v; }
+
+  function decodeCommon(b) {
+    return { sequence: u16(b, 4), timestamp: u32(b, 6) };
+  }
+
+  function decodeFast(b) {
+    const d = decodeCommon(b);
+    d.latitude = i32(b, 10) / 1e6;
+    d.longitude = i32(b, 14) / 1e6;
+    d.altitude_m = i16(b, 18) / 100;
+    d.altitude_ft = d.altitude_m * 3.28084;
+    d.accel_x_g = i16(b, 20) / 1000;
+    d.accel_y_g = i16(b, 22) / 1000;
+    d.accel_z_g = i16(b, 24) / 1000;
+    d.gyro_x_dps = i16(b, 26) / 100;
+    d.gyro_y_dps = i16(b, 28) / 100;
+    d.gyro_z_dps = i16(b, 30) / 100;
+    d.pressure_pa = u32(b, 32);
+    d.status = b[36];
+    d.gps_satellites = b[37];
+    return d;
+  }
+
+  function decodeStatus(b) {
+    const d = decodeCommon(b);
+    d.battery_mv = u16(b, 10);
+    d.flash_percent = u16(b, 12);
+    d.lora_rssi = i8(b[14]);
+    d.lora_snr = i8(b[15]);
+    d.gps_satellites = b[16];
+    d.status = b[17];
+    d.flash_bytes_written = u32(b, 18);
+    d.flash_errors = u32(b, 22);
+    d.gps_unix_time = u32(b, 26);
+    return d;
+  }
+
+  function decodeOrientation(b) {
+    const d = decodeCommon(b);
+    d.quat_w = i16(b, 10) / 10000;
+    d.quat_x = i16(b, 12) / 10000;
+    d.quat_y = i16(b, 14) / 10000;
+    d.quat_z = i16(b, 16) / 10000;
+    d.converged = ((b[18] >> 6) & 3) >= 3;
+    return d;
+  }
+
+  function parseLine(line) {
+    const text = line.trim();
+    if (!text || text[0] === "#") return null;
+    const hex = text.replace(/\s+/g, "");
+    if (hex.length < 8 || hex.length % 2 !== 0 || !/^[0-9A-Fa-f]+$/.test(hex)) return null;
+
+    const bytes = new Uint8Array(hex.length / 2);
+    for (let i = 0; i < bytes.length; i++) bytes[i] = parseInt(hex.substr(i * 2, 2), 16);
+
+    if (bytes[0] !== MAGIC_0 || bytes[1] !== MAGIC_1) return { bad: "bad_magic" };
+    if (bytes[2] !== PROTOCOL_VERSION) return { bad: "bad_version" };
+    const type = bytes[3];
+    const expected = PACKET_LENGTHS[type];
+    if (!expected) return { bad: "unknown_type" };
+    if (bytes.length !== expected) return { bad: "bad_length" };
+    const crc = crc16(bytes, bytes.length - 2);
+    if (crc !== u16(bytes, bytes.length - 2)) return { bad: "bad_crc" };
+
+    if (type === PACKET_FAST) return { kind: "fast", data: decodeFast(bytes) };
+    if (type === PACKET_STATUS) return { kind: "status", data: decodeStatus(bytes) };
+    return { kind: "orientation", data: decodeOrientation(bytes) };
+  }
+
+  function parseDump(text) {
+    const lines = text.split(/\r?\n/);
+    const fast = [], status = [], orientation = [];
+    const badReasons = {};
+    let bad = 0, blank = 0;
+
+    for (const line of lines) {
+      if (!line.trim()) { blank++; continue; }
+      if (line.trim()[0] === "#") continue;
+      const result = parseLine(line);
+      if (result === null) continue;
+      if (result.bad) {
+        bad++;
+        badReasons[result.bad] = (badReasons[result.bad] || 0) + 1;
+        continue;
+      }
+      if (result.kind === "fast") fast.push(result.data);
+      else if (result.kind === "status") status.push(result.data);
+      else orientation.push(result.data);
+    }
+
+    fast.sort((a, b) => a.timestamp - b.timestamp);
+    status.sort((a, b) => a.timestamp - b.timestamp);
+    orientation.sort((a, b) => a.timestamp - b.timestamp);
+
+    const merged = []
+      .concat(fast.map((r) => ({ r, t: r.timestamp })))
+      .concat(status.map((r) => ({ r, t: r.timestamp })))
+      .concat(orientation.map((r) => ({ r, t: r.timestamp })))
+      .sort((a, b) => a.t - b.t);
+
+    let offsetMs = null;
+    for (const { r, t } of merged) {
+      if (r.gps_unix_time) offsetMs = r.gps_unix_time * 1000 - t;
+      r.utcMs = offsetMs === null ? null : t + offsetMs;
+    }
+
+    return { fast, status, orientation, bad, blank, badReasons };
+  }
+
+  function fmtUTC(ms) {
+    if (ms === null || ms === undefined) return "–";
+    const d = new Date(ms);
+    return d.toISOString().replace("T", " ").replace(/\.\d+Z$/, " UTC");
+  }
+  function fmtRelative(ms) {
+    const s = ms / 1000;
+    return (s < 0 ? "-" : "") + Math.abs(s).toFixed(2) + "s";
+  }
+  function fmtNum(v, digits) {
+    if (v === undefined || v === null || Number.isNaN(v)) return "–";
+    return v.toFixed(digits === undefined ? 2 : digits);
+  }
+
+  const state = { fast: [], status: [], orientation: [], t0: 0, charts: {} };
+
+  const dumpResume = { active: false, offset: EEPROM_DATA_START, text: "" };
+
+  const els = {
+    chips: document.getElementById("chips"),
+    tabs: document.getElementById("tabs"),
+    emptyState: document.getElementById("emptyState"),
+    panels: document.getElementById("panels"),
+    pasteArea: document.getElementById("pasteArea"),
+  };
+
+  const serialStatusEl = document.getElementById("serialStatus");
+  function setSerialStatus(text, isError) {
+    serialStatusEl.hidden = false;
+    serialStatusEl.textContent = text;
+    serialStatusEl.style.color = isError ? "var(--bad)" : "";
+    serialStatusEl.style.borderColor = isError ? "var(--bad)" : "";
+  }
+
+  function readWithTimeout(reader, ms) {
+    return Promise.race([
+      reader.read(),
+      new Promise((resolve) => setTimeout(() => resolve({ idle: true }), ms)),
+    ]);
+  }
+
+  async function connectSerial(isResume) {
+    if (!("serial" in navigator)) {
+      setSerialStatus("Web Serial isn't available in this browser/context. Use Chrome or Edge, opened directly (not inside another site's embed), or use the manual DUMP steps below.", true);
+      return;
+    }
+    if (!isResume) {
+      dumpResume.active = false;
+      dumpResume.offset = EEPROM_DATA_START;
+      dumpResume.text = "";
+    }
+
+    let port;
+    try {
+      port = await navigator.serial.requestPort();
+      await port.open({ baudRate: 115200 });
+    } catch (err) {
+      setSerialStatus("Couldn't open a serial connection (" + err.message + "). If this page is embedded inside Claude's chat, that's expected - open the standalone local copy of this file in Chrome/Edge instead, or use the manual DUMP steps below.", true);
+      return;
+    }
+
+    let text = "";
+    let reader = null;
+    try {
+      const command = isResume ? "DUMP " + dumpResume.offset + "\n" : "DUMP\n";
+      setSerialStatus(isResume ? "Reconnected - resuming from byte " + dumpResume.offset + "..." : "Connected. Sending DUMP...");
+      const writer = port.writable.getWriter();
+      await writer.write(new TextEncoder().encode(command));
+      writer.releaseLock();
+
+      reader = port.readable.getReader();
+      const decoder = new TextDecoder();
+      let sawStart = false;
+      while (true) {
+        const result = await readWithTimeout(reader, 4000);
+        if (result.idle) {
+          setSerialStatus(sawStart ? "Stopped receiving - finishing with what we got (" + text.length + " bytes)." : "No response from the rocket - is DUMP supported and the EEPROM detected?", !sawStart);
+          break;
+        }
+        if (result.done) break;
+        if (result.value) {
+          text += decoder.decode(result.value);
+          sawStart = sawStart || text.includes("# FLASH DUMP START");
+          setSerialStatus("Receiving dump... " + text.length + " bytes" + (sawStart ? "" : " (waiting for # FLASH DUMP START)"));
+          if (text.includes("# FLASH DUMP END")) break;
+        }
+      }
+    } catch (err) {
+      setSerialStatus("Serial read failed: " + err.message + (text ? " - trying to use the " + text.length + " bytes received before the error." : ""), true);
+    }
+
+    try { if (reader) await reader.cancel(); } catch (e) {  }
+    try { if (reader) reader.releaseLock(); } catch (e) {  }
+    try { await port.close(); } catch (e) {  }
+
+    if (!text.includes("# FLASH DUMP START")) {
+      setSerialStatus("No FLASH DUMP received. Make sure the rocket is connected directly (not through the ground station) and its EEPROM is detected.", true);
+      return;
+    }
+
+    const complete = text.includes("# FLASH DUMP END");
+
+    const parsedThisAttempt = parseDump(text);
+    const bytesThisAttempt =
+      parsedThisAttempt.fast.length * PACKET_LENGTHS[PACKET_FAST] +
+      parsedThisAttempt.status.length * PACKET_LENGTHS[PACKET_STATUS] +
+      parsedThisAttempt.orientation.length * PACKET_LENGTHS[PACKET_ORIENTATION];
+
+    dumpResume.text += text;
+    dumpResume.offset += bytesThisAttempt;
+
+    setSerialStatus("Dump received (" + text.length + " bytes this attempt). Parsing...");
+    onDumpLoaded(dumpResume.text);
+
+    if (complete) {
+      dumpResume.active = false;
+      setSerialStatus("Loaded from live serial connection.");
+      btnSerial.textContent = "Connect to rocket (Web Serial)";
+    } else {
+      dumpResume.active = true;
+      setSerialStatus("Connection dropped before the dump finished - loaded " + dumpResume.offset + " bytes of flash so far. Reconnect the rocket and click below to resume exactly where this left off.");
+      btnSerial.textContent = "Resume dump (from byte " + dumpResume.offset + ")";
+    }
+  }
+
+  const btnSerial = document.getElementById("btnSerial");
+  if (!("serial" in navigator)) {
+    btnSerial.disabled = true;
+    btnSerial.title = "Web Serial isn't supported in this browser - use Chrome or Edge.";
+    btnSerial.style.opacity = 0.5;
+    btnSerial.style.cursor = "not-allowed";
+  }
+  btnSerial.addEventListener("click", () => connectSerial(dumpResume.active));
+
+  document.getElementById("btnLoad").addEventListener("click", () => document.getElementById("fileInput").click());
+  document.getElementById("fileInput").addEventListener("change", (e) => {
+    const file = e.target.files && e.target.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => onDumpLoaded(String(reader.result));
+    reader.readAsText(file);
+  });
+  document.getElementById("btnPaste").addEventListener("click", () => {
+    els.pasteArea.focus();
+    els.pasteArea.scrollIntoView({ behavior: "smooth", block: "center" });
+  });
+  document.getElementById("btnParsePaste").addEventListener("click", () => {
+    if (els.pasteArea.value.trim()) onDumpLoaded(els.pasteArea.value);
+  });
+  document.getElementById("btnSample").addEventListener("click", () => onDumpLoaded(buildSampleDump()));
+
+  document.body.addEventListener("dragover", (e) => { e.preventDefault(); document.getElementById("dropHint").classList.add("drag"); });
+  document.body.addEventListener("dragleave", () => document.getElementById("dropHint").classList.remove("drag"));
+  document.body.addEventListener("drop", (e) => {
+    e.preventDefault();
+    document.getElementById("dropHint").classList.remove("drag");
+    const file = e.dataTransfer.files && e.dataTransfer.files[0];
+    if (!file) return;
+    const reader = new FileReader();
+    reader.onload = () => onDumpLoaded(String(reader.result));
+    reader.readAsText(file);
+  });
+
+  document.querySelectorAll(".tab").forEach((tab) => {
+    tab.addEventListener("click", () => {
+      document.querySelectorAll(".tab").forEach((t) => t.classList.remove("active"));
+      document.querySelectorAll(".panel").forEach((p) => p.classList.remove("active"));
+      tab.classList.add("active");
+      document.getElementById("panel-" + tab.dataset.tab).classList.add("active");
+      if (tab.dataset.tab === "playback") {
+        initThreeIfNeeded();
+        resizeThree();
+        renderThree();
+        if (state.charts.playback) state.charts.playback.resize();
+      }
+    });
+  });
+
+  function onDumpLoaded(text) {
+    const parsed = parseDump(text);
+    state.fast = parsed.fast;
+    state.status = parsed.status;
+    state.orientation = parsed.orientation;
+
+    const allTimestamps = state.fast.concat(state.status, state.orientation).map((r) => r.timestamp);
+    state.t0 = allTimestamps.length ? Math.min.apply(null, allTimestamps) : 0;
+
+    renderChips(parsed);
+    renderCharts();
+    renderGpsTrack();
+    renderTables();
+    initPlayback();
+
+    els.emptyState.hidden = true;
+    els.chips.hidden = false;
+    els.tabs.hidden = false;
+    els.panels.hidden = false;
+  }
+
+  function renderChips(parsed) {
+    const total = state.fast.length + state.status.length + state.orientation.length;
+    const durationMs = total ? Math.max.apply(null, state.fast.concat(state.status, state.orientation).map((r) => r.timestamp)) - state.t0 : 0;
+
+    let maxAltFt = null, maxAccelG = null, minBatteryV = null, maxFlashPct = null, firstGpsLock = null;
+    state.fast.forEach((r) => {
+      if (maxAltFt === null || r.altitude_ft > maxAltFt) maxAltFt = r.altitude_ft;
+      const mag = Math.sqrt(r.accel_x_g ** 2 + r.accel_y_g ** 2 + r.accel_z_g ** 2);
+      if (maxAccelG === null || mag > maxAccelG) maxAccelG = mag;
+      if ((r.status & 0x04) && firstGpsLock === null) firstGpsLock = r.timestamp - state.t0;
+    });
+    state.status.forEach((r) => {
+      if (r.battery_mv > 0 && (minBatteryV === null || r.battery_mv < minBatteryV)) minBatteryV = r.battery_mv;
+      if (maxFlashPct === null || r.flash_percent > maxFlashPct) maxFlashPct = r.flash_percent;
+    });
+
+    const badTotal = parsed.bad;
+    const chips = [
+      ["Packets", total, null],
+      ["Rejected", badTotal, badTotal > 0 ? "warn" : "good"],
+      ["Duration", (durationMs / 1000).toFixed(1) + "s", null],
+      ["Max altitude", maxAltFt === null ? "–" : maxAltFt.toFixed(0) + " ft", null],
+      ["Max accel", maxAccelG === null ? "–" : maxAccelG.toFixed(1) + " g", null],
+      ["Min battery", minBatteryV === null ? "–" : (minBatteryV / 1000).toFixed(2) + " V", minBatteryV !== null && minBatteryV < 3300 ? "bad" : null],
+      ["Flash used", maxFlashPct === null ? "–" : maxFlashPct + "%", maxFlashPct !== null && maxFlashPct >= 99 ? "warn" : null],
+      ["First GPS lock", firstGpsLock === null ? "no fix" : "T+" + (firstGpsLock / 1000).toFixed(0) + "s", firstGpsLock === null ? "warn" : "good"],
+    ];
+
+    els.chips.innerHTML = chips.map(([k, v, cls]) =>
+      '<div class="chip"><div class="k">' + k + '</div><div class="v' + (cls ? " " + cls : "") + '">' + v + "</div></div>"
+    ).join("");
+  }
+
+  function destroyChart(key) {
+    if (state.charts[key]) { state.charts[key].destroy(); delete state.charts[key]; }
+  }
+
+  function gridColor() {
+    return getComputedStyle(document.body).getPropertyValue("--border").trim();
+  }
+  function textColor() {
+    return getComputedStyle(document.body).getPropertyValue("--muted").trim();
+  }
+
+  function baseOptions(yLabel) {
+    return {
+      responsive: true,
+      animation: false,
+      interaction: { mode: "index", intersect: false },
+      scales: {
+        x: {
+          type: "linear",
+          title: { display: true, text: "T+ seconds", color: textColor() },
+          grid: { color: gridColor() },
+          ticks: { color: textColor() },
+        },
+        y: {
+          title: { display: !!yLabel, text: yLabel || "", color: textColor() },
+          grid: { color: gridColor() },
+          ticks: { color: textColor() },
+        },
+      },
+      plugins: {
+        legend: { labels: { color: textColor() } },
+        tooltip: {
+          callbacks: {
+            afterBody: function (items) {
+              const row = items[0] && items[0].raw && items[0].raw.utcMs;
+              return row ? ["GPS time: " + fmtUTC(row)] : [];
+            },
+          },
+        },
+      },
+    };
+  }
+
+  function decimate(rows) {
+    const max = 1500;
+    if (rows.length <= max) return rows;
+    const stride = Math.ceil(rows.length / max);
+    return rows.filter((_, i) => i % stride === 0);
+  }
+
+  function toPoints(rows, field) {
+    return decimate(rows).map((r) => ({ x: (r.timestamp - state.t0) / 1000, y: r[field], utcMs: r.utcMs }));
+  }
+
+  function renderCharts() {
+    const fast = state.fast, status = state.status;
+
+    destroyChart("alt");
+    state.charts.alt = new Chart(document.getElementById("chartAlt"), {
+      type: "line",
+      data: { datasets: [{ label: "Altitude (ft)", data: toPoints(fast, "altitude_ft"), borderColor: getComputedStyle(document.body).getPropertyValue("--accent"), backgroundColor: "transparent", pointRadius: 0, borderWidth: 2 }] },
+      options: baseOptions("ft"),
+    });
+
+    destroyChart("power");
+    state.charts.power = new Chart(document.getElementById("chartPower"), {
+      type: "line",
+      data: {
+        datasets: [
+          { label: "Battery (V)", data: decimate(status).map((r) => ({ x: (r.timestamp - state.t0) / 1000, y: r.battery_mv / 1000, utcMs: r.utcMs })), borderColor: getComputedStyle(document.body).getPropertyValue("--good"), backgroundColor: "transparent", pointRadius: 0, borderWidth: 2, yAxisID: "y" },
+          { label: "Flash used (%)", data: decimate(status).map((r) => ({ x: (r.timestamp - state.t0) / 1000, y: r.flash_percent, utcMs: r.utcMs })), borderColor: getComputedStyle(document.body).getPropertyValue("--accent-2"), backgroundColor: "transparent", pointRadius: 0, borderWidth: 2, yAxisID: "y1" },
+        ],
+      },
+      options: Object.assign(baseOptions("V"), {
+        scales: Object.assign({}, baseOptions().scales, {
+          y1: { position: "right", min: 0, max: 100, title: { display: true, text: "%", color: textColor() }, grid: { drawOnChartArea: false }, ticks: { color: textColor() } },
+        }),
+      }),
+    });
+
+    destroyChart("accel");
+    state.charts.accel = new Chart(document.getElementById("chartAccel"), {
+      type: "line",
+      data: {
+        datasets: [
+          { label: "X", data: toPoints(fast, "accel_x_g"), borderColor: "#f85149", backgroundColor: "transparent", pointRadius: 0, borderWidth: 1.5 },
+          { label: "Y", data: toPoints(fast, "accel_y_g"), borderColor: "#3fb950", backgroundColor: "transparent", pointRadius: 0, borderWidth: 1.5 },
+          { label: "Z", data: toPoints(fast, "accel_z_g"), borderColor: "#4cc9f0", backgroundColor: "transparent", pointRadius: 0, borderWidth: 1.5 },
+        ],
+      },
+      options: baseOptions("g"),
+    });
+
+    destroyChart("gyro");
+    state.charts.gyro = new Chart(document.getElementById("chartGyro"), {
+      type: "line",
+      data: {
+        datasets: [
+          { label: "X", data: toPoints(fast, "gyro_x_dps"), borderColor: "#f85149", backgroundColor: "transparent", pointRadius: 0, borderWidth: 1.5 },
+          { label: "Y", data: toPoints(fast, "gyro_y_dps"), borderColor: "#3fb950", backgroundColor: "transparent", pointRadius: 0, borderWidth: 1.5 },
+          { label: "Z", data: toPoints(fast, "gyro_z_dps"), borderColor: "#4cc9f0", backgroundColor: "transparent", pointRadius: 0, borderWidth: 1.5 },
+        ],
+      },
+      options: baseOptions("deg/s"),
+    });
+
+    destroyChart("radio");
+    state.charts.radio = new Chart(document.getElementById("chartRadio"), {
+      type: "line",
+      data: {
+        datasets: [
+          { label: "RSSI (dBm)", data: decimate(status).map((r) => ({ x: (r.timestamp - state.t0) / 1000, y: r.lora_rssi, utcMs: r.utcMs })), borderColor: getComputedStyle(document.body).getPropertyValue("--accent"), backgroundColor: "transparent", pointRadius: 0, borderWidth: 2 },
+          { label: "SNR (dB)", data: decimate(status).map((r) => ({ x: (r.timestamp - state.t0) / 1000, y: r.lora_snr, utcMs: r.utcMs })), borderColor: getComputedStyle(document.body).getPropertyValue("--accent-2"), backgroundColor: "transparent", pointRadius: 0, borderWidth: 2 },
+        ],
+      },
+      options: baseOptions("dBm / dB"),
+    });
+
+    destroyChart("sats");
+    state.charts.sats = new Chart(document.getElementById("chartSats"), {
+      type: "line",
+      data: { datasets: [{ label: "Satellites", data: toPoints(fast, "gps_satellites"), borderColor: getComputedStyle(document.body).getPropertyValue("--accent-2"), backgroundColor: "transparent", pointRadius: 0, borderWidth: 2, stepped: true }] },
+      options: baseOptions("count"),
+    });
+  }
+
+  function renderGpsTrack(highlightRow) {
+    const pts = state.fast.filter((r) => (r.status & 0x04) && (r.latitude !== 0 || r.longitude !== 0));
+    const canvas = document.getElementById("gpsCanvas");
+    const emptyMsg = document.getElementById("gpsEmpty");
+    const dpr = window.devicePixelRatio || 1;
+    const cssW = canvas.parentElement.clientWidth;
+    const cssH = 420;
+    canvas.width = cssW * dpr;
+    canvas.height = cssH * dpr;
+    const ctx = canvas.getContext("2d");
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    ctx.clearRect(0, 0, cssW, cssH);
+
+    if (pts.length < 2) {
+      emptyMsg.hidden = false;
+      return;
+    }
+    emptyMsg.hidden = true;
+
+    const lats = pts.map((p) => p.latitude), lons = pts.map((p) => p.longitude);
+    let minLat = Math.min.apply(null, lats), maxLat = Math.max.apply(null, lats);
+    let minLon = Math.min.apply(null, lons), maxLon = Math.max.apply(null, lons);
+    const padFrac = 0.12;
+    const latPad = Math.max((maxLat - minLat) * padFrac, 0.0002);
+    const lonPad = Math.max((maxLon - minLon) * padFrac, 0.0002);
+    minLat -= latPad; maxLat += latPad; minLon -= lonPad; maxLon += lonPad;
+
+    const margin = 30;
+    function project(lat, lon) {
+      const x = margin + ((lon - minLon) / (maxLon - minLon)) * (cssW - margin * 2);
+      const y = margin + (1 - (lat - minLat) / (maxLat - minLat)) * (cssH - margin * 2);
+      return [x, y];
+    }
+
+    ctx.strokeStyle = gridColor();
+    ctx.lineWidth = 1;
+    for (let i = 0; i <= 4; i++) {
+      const y = margin + (i / 4) * (cssH - margin * 2);
+      ctx.beginPath(); ctx.moveTo(margin, y); ctx.lineTo(cssW - margin, y); ctx.stroke();
+    }
+
+    const accent2 = getComputedStyle(document.body).getPropertyValue("--accent-2").trim();
+    const accent = getComputedStyle(document.body).getPropertyValue("--accent").trim();
+
+    ctx.lineWidth = 2;
+    ctx.beginPath();
+    pts.forEach((p, i) => {
+      const [x, y] = project(p.latitude, p.longitude);
+      if (i === 0) ctx.moveTo(x, y); else ctx.lineTo(x, y);
+    });
+    ctx.strokeStyle = textColor();
+    ctx.globalAlpha = 0.6;
+    ctx.stroke();
+    ctx.globalAlpha = 1;
+
+    pts.forEach((p, i) => {
+      const [x, y] = project(p.latitude, p.longitude);
+      const t = i / (pts.length - 1);
+      const color = lerpColor(accent2, accent, t);
+      ctx.fillStyle = color;
+      ctx.beginPath();
+      ctx.arc(x, y, i === 0 || i === pts.length - 1 ? 5 : 2, 0, Math.PI * 2);
+      ctx.fill();
+    });
+
+    ctx.fillStyle = textColor();
+    ctx.font = "11px 'IBM Plex Mono', monospace";
+    const last = pts[pts.length - 1];
+    ctx.fillText("start: " + pts[0].latitude.toFixed(5) + ", " + pts[0].longitude.toFixed(5), margin, cssH - 10);
+    ctx.fillText("last: " + last.latitude.toFixed(5) + ", " + last.longitude.toFixed(5), margin, 20);
+
+    if (highlightRow && (highlightRow.status & 0x04) && (highlightRow.latitude !== 0 || highlightRow.longitude !== 0)) {
+      const [hx, hy] = project(highlightRow.latitude, highlightRow.longitude);
+      ctx.beginPath();
+      ctx.arc(hx, hy, 8, 0, Math.PI * 2);
+      ctx.strokeStyle = "#ffffff";
+      ctx.lineWidth = 2;
+      ctx.stroke();
+    }
+  }
+
+  function lerpColor(c1, c2, t) {
+    const a = hexToRgb(c1), b = hexToRgb(c2);
+    const r = Math.round(a[0] + (b[0] - a[0]) * t);
+    const g = Math.round(a[1] + (b[1] - a[1]) * t);
+    const bl = Math.round(a[2] + (b[2] - a[2]) * t);
+    return "rgb(" + r + "," + g + "," + bl + ")";
+  }
+  function hexToRgb(hex) {
+    const h = hex.trim().replace("#", "");
+    return [parseInt(h.substr(0, 2), 16), parseInt(h.substr(2, 2), 16), parseInt(h.substr(4, 2), 16)];
+  }
+
+  function flagCell(status) {
+    return '<span class="flagset">' + STATUS_BITS.map(([name, bit]) =>
+      '<span class="flag' + ((status & bit) ? " on" : "") + '">' + name + "</span>"
+    ).join("") + "</span>";
+  }
+
+  function renderTables() {
+    document.getElementById("fastCount").textContent = state.fast.length + " packets";
+    document.getElementById("statusCount").textContent = state.status.length + " packets";
+    document.getElementById("orientationCount").textContent = state.orientation.length + " packets";
+
+    const fastHead = ["T+", "GPS time", "Lat", "Lon", "Alt (ft)", "Accel X/Y/Z (g)", "Gyro X/Y/Z (deg/s)", "Pressure (Pa)", "Sats", "Flags"];
+    const fastRows = state.fast.map((r) => [
+      fmtRelative(r.timestamp - state.t0),
+      fmtUTC(r.utcMs),
+      r.latitude.toFixed(6),
+      r.longitude.toFixed(6),
+      fmtNum(r.altitude_ft, 0),
+      fmtNum(r.accel_x_g, 2) + " / " + fmtNum(r.accel_y_g, 2) + " / " + fmtNum(r.accel_z_g, 2),
+      fmtNum(r.gyro_x_dps, 1) + " / " + fmtNum(r.gyro_y_dps, 1) + " / " + fmtNum(r.gyro_z_dps, 1),
+      r.pressure_pa,
+      r.gps_satellites,
+      flagCell(r.status),
+    ]);
+    buildTable("tableFast", fastHead, fastRows);
+
+    const statusHead = ["T+", "GPS time", "Battery (V)", "Flash used", "RSSI (dBm)", "SNR (dB)", "Flash written (B)", "Flash errors", "Flags"];
+    const statusRows = state.status.map((r) => [
+      fmtRelative(r.timestamp - state.t0),
+      fmtUTC(r.utcMs),
+      (r.battery_mv / 1000).toFixed(3),
+      r.flash_percent + "%",
+      r.lora_rssi,
+      r.lora_snr,
+      r.flash_bytes_written,
+      r.flash_errors,
+      flagCell(r.status),
+    ]);
+    buildTable("tableStatus", statusHead, statusRows);
+
+    const orientationHead = ["T+", "GPS time", "Quat W", "Quat X", "Quat Y", "Quat Z", "Converged"];
+    const orientationRows = state.orientation.map((r) => [
+      fmtRelative(r.timestamp - state.t0),
+      fmtUTC(r.utcMs),
+      fmtNum(r.quat_w, 3),
+      fmtNum(r.quat_x, 3),
+      fmtNum(r.quat_y, 3),
+      fmtNum(r.quat_z, 3),
+      r.converged ? "yes" : "no",
+    ]);
+    buildTable("tableOrientation", orientationHead, orientationRows);
+  }
+
+  function buildTable(id, head, rows) {
+    const table = document.getElementById(id);
+    const headHtml = "<thead><tr>" + head.map((h) => "<th>" + h + "</th>").join("") + "</tr></thead>";
+    const bodyHtml = "<tbody>" + rows.map((row) =>
+      "<tr>" + row.map((cell) => "<td>" + cell + "</td>").join("") + "</tr>"
+    ).join("") + "</tbody>";
+    table.innerHTML = headHtml + bodyHtml;
+  }
+
+  const pb = { durationMs: 0, playing: false, rafId: null, wallStart: 0, simStart: 0, currentRelMs: 0 };
+  const three = { inited: false, scene: null, camera: null, renderer: null, rocket: null, theta: 0.9, phi: 1.1, radius: 3.2, noOrientationYet: true };
+
+  function findLatestAtOrBefore(rows, t) {
+    if (!rows.length) return null;
+    if (t < rows[0].timestamp) return null;
+    let lo = 0, hi = rows.length - 1;
+    while (lo < hi) {
+      const mid = (lo + hi + 1) >> 1;
+      if (rows[mid].timestamp <= t) lo = mid; else hi = mid - 1;
+    }
+    return rows[lo];
+  }
+
+  function initPlayback() {
+    pauseScrub();
+    const all = state.fast.concat(state.status, state.orientation);
+    const maxT = all.length ? Math.max.apply(null, all.map((r) => r.timestamp)) : state.t0;
+    pb.durationMs = Math.max(0, maxT - state.t0);
+    const scrub = document.getElementById("pbScrub");
+    scrub.max = String(Math.max(1, Math.round(pb.durationMs)));
+    scrub.value = "0";
+    renderPlaybackChart();
+    updatePlaybackAt(0);
+  }
+
+  function renderPlaybackChart() {
+    destroyChart("playback");
+    state.charts.playback = new Chart(document.getElementById("chartPlayback"), {
+      type: "line",
+      data: { datasets: [{ label: "Altitude (ft)", data: toPoints(state.fast, "altitude_ft"), borderColor: getComputedStyle(document.body).getPropertyValue("--accent"), backgroundColor: "transparent", pointRadius: 0, borderWidth: 2 }] },
+      options: baseOptions("ft"),
+      plugins: [{
+        id: "pbCursor",
+        afterDraw(chart) {
+          const xScale = chart.scales.x;
+          if (!xScale) return;
+          const xPixel = xScale.getPixelForValue(pb.currentRelMs / 1000);
+          const { top, bottom } = chart.chartArea;
+          const ctx = chart.ctx;
+          ctx.save();
+          ctx.strokeStyle = getComputedStyle(document.body).getPropertyValue("--accent");
+          ctx.lineWidth = 2;
+          ctx.beginPath();
+          ctx.moveTo(xPixel, top);
+          ctx.lineTo(xPixel, bottom);
+          ctx.stroke();
+          ctx.restore();
+        },
+      }],
+    });
+  }
+
+  function updatePlaybackAt(relMs) {
+    relMs = Math.max(0, Math.min(pb.durationMs, relMs));
+    pb.currentRelMs = relMs;
+    const t = state.t0 + relMs;
+    const fastRow = findLatestAtOrBefore(state.fast, t);
+    const statusRow = findLatestAtOrBefore(state.status, t);
+    const orientRow = findLatestAtOrBefore(state.orientation, t);
+
+    document.getElementById("pbScrub").value = String(Math.round(relMs));
+    document.getElementById("pbTimeRel").textContent = "T+" + fmtRelative(relMs);
+    const utcMs = (fastRow && fastRow.utcMs) || (statusRow && statusRow.utcMs) || (orientRow && orientRow.utcMs) || null;
+    document.getElementById("pbTimeUtc").textContent = utcMs ? fmtUTC(utcMs) : "no GPS time fix yet";
+
+    renderReadout(fastRow, statusRow);
+    setRocketQuaternion(orientRow);
+    renderThree();
+    if (state.charts.playback) state.charts.playback.update("none");
+    if (document.getElementById("panel-gps").classList.contains("active")) renderGpsTrack(fastRow);
+  }
+
+  function renderReadout(fastRow, statusRow) {
+    const items = [];
+    if (fastRow) {
+      items.push(["Altitude", fmtNum(fastRow.altitude_ft, 0) + " ft"]);
+      items.push(["Accel X/Y/Z", fmtNum(fastRow.accel_x_g, 2) + " / " + fmtNum(fastRow.accel_y_g, 2) + " / " + fmtNum(fastRow.accel_z_g, 2) + " g"]);
+      items.push(["Gyro X/Y/Z", fmtNum(fastRow.gyro_x_dps, 1) + " / " + fmtNum(fastRow.gyro_y_dps, 1) + " / " + fmtNum(fastRow.gyro_z_dps, 1) + " deg/s"]);
+      items.push(["GPS fix", (fastRow.status & 0x04) ? fastRow.latitude.toFixed(5) + ", " + fastRow.longitude.toFixed(5) : "no fix", (fastRow.status & 0x04) ? "good" : "bad"]);
+      items.push(["Satellites", fastRow.gps_satellites]);
+      items.push(["Recording", (fastRow.status & 0x01) ? "yes" : "no"]);
+    } else {
+      items.push(["Fast data", "no sample yet"]);
+    }
+    if (statusRow) {
+      items.push(["Battery", (statusRow.battery_mv / 1000).toFixed(2) + " V", statusRow.battery_mv > 0 && statusRow.battery_mv < 3300 ? "bad" : null]);
+      items.push(["Flash used", statusRow.flash_percent + "%", statusRow.flash_percent >= 99 ? "bad" : null]);
+      items.push(["LoRa link", statusRow.lora_rssi + " dBm / " + statusRow.lora_snr + " dB"]);
+    }
+    document.getElementById("pbReadout").innerHTML = items.map(([k, v, cls]) =>
+      '<div class="readout-item"><div class="k">' + k + '</div><div class="v' + (cls ? " " + cls : "") + '">' + v + "</div></div>"
+    ).join("");
+  }
+
+  function pauseScrub() {
+    pb.playing = false;
+    const btn = document.getElementById("pbPlayPause");
+    if (btn) btn.textContent = "Play";
+    if (pb.rafId) { cancelAnimationFrame(pb.rafId); pb.rafId = null; }
+  }
+
+  function playScrub() {
+    if (pb.durationMs <= 0) return;
+    pb.playing = true;
+    document.getElementById("pbPlayPause").textContent = "Pause";
+    pb.wallStart = performance.now();
+    pb.simStart = pb.currentRelMs;
+    const tick = () => {
+      if (!pb.playing) return;
+      const speed = parseFloat(document.getElementById("pbSpeed").value) || 1;
+      const elapsed = (performance.now() - pb.wallStart) * speed;
+      const relMs = pb.simStart + elapsed;
+      if (relMs >= pb.durationMs) {
+        updatePlaybackAt(pb.durationMs);
+        pauseScrub();
+        return;
+      }
+      updatePlaybackAt(relMs);
+      pb.rafId = requestAnimationFrame(tick);
+    };
+    pb.rafId = requestAnimationFrame(tick);
+  }
+
+  document.getElementById("pbPlayPause").addEventListener("click", () => { pb.playing ? pauseScrub() : playScrub(); });
+  document.getElementById("pbScrub").addEventListener("input", (e) => { pauseScrub(); updatePlaybackAt(Number(e.target.value)); });
+  document.getElementById("pbJumpLaunch").addEventListener("click", () => {
+    pauseScrub();
+    const launch = state.fast.find((r) => Math.sqrt(r.accel_x_g ** 2 + r.accel_y_g ** 2 + r.accel_z_g ** 2) >= 2);
+    updatePlaybackAt(launch ? launch.timestamp - state.t0 : 0);
+  });
+  document.getElementById("pbJumpApogee").addEventListener("click", () => {
+    pauseScrub();
+    if (!state.fast.length) return;
+    let best = state.fast[0];
+    state.fast.forEach((r) => { if (r.altitude_ft > best.altitude_ft) best = r; });
+    updatePlaybackAt(best.timestamp - state.t0);
+  });
+
+  (function wireChartScrub() {
+    const canvas = document.getElementById("chartPlayback");
+    let dragging = false;
+    function seekFromClientX(clientX) {
+      const chart = state.charts.playback;
+      if (!chart) return;
+      const rect = canvas.getBoundingClientRect();
+      const seconds = chart.scales.x.getValueForPixel(clientX - rect.left);
+      pauseScrub();
+      updatePlaybackAt(seconds * 1000);
+    }
+    canvas.addEventListener("pointerdown", (e) => { dragging = true; seekFromClientX(e.clientX); });
+    window.addEventListener("pointermove", (e) => { if (dragging) seekFromClientX(e.clientX); });
+    window.addEventListener("pointerup", () => { dragging = false; });
+  })();
+
+  function initThreeIfNeeded() {
+    if (three.inited || typeof THREE === "undefined") return;
+    const canvas = document.getElementById("threeCanvas");
+
+    three.renderer = new THREE.WebGLRenderer({ canvas, antialias: true, alpha: true });
+    three.scene = new THREE.Scene();
+    three.camera = new THREE.PerspectiveCamera(42, 1, 0.1, 100);
+
+    three.scene.add(new THREE.AmbientLight(0xffffff, 0.55));
+    const dir = new THREE.DirectionalLight(0xffffff, 0.85);
+    dir.position.set(3, 5, 4);
+    three.scene.add(dir);
+
+    const grid = new THREE.GridHelper(6, 12, 0x4a5568, 0x2a313c);
+    grid.position.y = -1.0;
+    three.scene.add(grid);
+
+    const rocket = new THREE.Group();
+    const bodyMat = new THREE.MeshStandardMaterial({ color: 0xd8dde3, roughness: 0.55, metalness: 0.15 });
+    const accentMat = new THREE.MeshStandardMaterial({ color: 0xff9f1c, roughness: 0.5 });
+
+    const body = new THREE.Mesh(new THREE.CylinderGeometry(0.14, 0.14, 1.3, 20), bodyMat);
+    rocket.add(body);
+
+    const nose = new THREE.Mesh(new THREE.ConeGeometry(0.14, 0.45, 20), accentMat);
+    nose.position.y = 1.3 / 2 + 0.45 / 2;
+    rocket.add(nose);
+
+    for (let i = 0; i < 3; i++) {
+      const fin = new THREE.Mesh(new THREE.BoxGeometry(0.02, 0.32, 0.22), bodyMat);
+      const angle = (i / 3) * Math.PI * 2;
+      fin.position.set(Math.cos(angle) * 0.15, -1.3 / 2 + 0.16, Math.sin(angle) * 0.15);
+      fin.rotation.y = angle;
+      rocket.add(fin);
+    }
+
+    three.scene.add(rocket);
+    three.rocket = rocket;
+
+    updateThreeCamera();
+    wireThreeDrag(canvas);
+    window.addEventListener("resize", () => {
+      if (document.getElementById("panel-playback").classList.contains("active")) { resizeThree(); renderThree(); }
+    });
+    three.inited = true;
+  }
+
+  function wireThreeDrag(canvas) {
+    let dragging = false, lastX = 0, lastY = 0;
+    canvas.addEventListener("pointerdown", (e) => {
+      dragging = true; lastX = e.clientX; lastY = e.clientY;
+      try { canvas.setPointerCapture(e.pointerId); } catch (err) {  }
+    });
+    canvas.addEventListener("pointermove", (e) => {
+      if (!dragging) return;
+      const dx = e.clientX - lastX, dy = e.clientY - lastY;
+      lastX = e.clientX; lastY = e.clientY;
+      three.theta -= dx * 0.008;
+      three.phi = Math.min(Math.PI - 0.15, Math.max(0.15, three.phi - dy * 0.008));
+      updateThreeCamera();
+      renderThree();
+    });
+    canvas.addEventListener("pointerup", (e) => {
+      dragging = false;
+      try { canvas.releasePointerCapture(e.pointerId); } catch (err) {  }
+    });
+    canvas.addEventListener("wheel", (e) => {
+      e.preventDefault();
+      three.radius = Math.min(8, Math.max(1.4, three.radius + e.deltaY * 0.002));
+      updateThreeCamera();
+      renderThree();
+    }, { passive: false });
+  }
+
+  function updateThreeCamera() {
+    if (!three.camera) return;
+    const { theta, phi, radius } = three;
+    three.camera.position.set(
+      radius * Math.sin(phi) * Math.sin(theta),
+      radius * Math.cos(phi) + 0.1,
+      radius * Math.sin(phi) * Math.cos(theta)
+    );
+    three.camera.lookAt(0, 0.1, 0);
+  }
+
+  function resizeThree() {
+    if (!three.inited) return;
+    const canvas = document.getElementById("threeCanvas");
+    const w = canvas.clientWidth || canvas.parentElement.clientWidth || 300;
+    const h = canvas.clientHeight || 380;
+    three.renderer.setPixelRatio(Math.min(window.devicePixelRatio || 1, 2));
+    three.renderer.setSize(w, h, false);
+    three.camera.aspect = w / h;
+    three.camera.updateProjectionMatrix();
+  }
+
+  function setRocketQuaternion(orientRow) {
+    three.noOrientationYet = !orientRow;
+    if (!three.inited || !three.rocket || !orientRow) return;
+    three.rocket.quaternion.set(orientRow.quat_x, orientRow.quat_y, orientRow.quat_z, orientRow.quat_w);
+  }
+
+  function renderThree() {
+    if (!three.inited) return;
+    three.rocket.traverse((obj) => {
+      if (obj.material) {
+        obj.material.transparent = three.noOrientationYet;
+        obj.material.opacity = three.noOrientationYet ? 0.35 : 1;
+      }
+    });
+    three.renderer.render(three.scene, three.camera);
+  }
+
+  function buildSampleDump() {
+    const lines = ["# FLASH DUMP START (synthetic example - not a real flight)"];
+    const packetBuf = new Uint8Array(40);
+
+    function write(buf, offset, value, bytes) {
+      for (let i = 0; i < bytes; i++) { buf[offset + i] = value & 0xFF; value = Math.floor(value / 256); }
+    }
+    function writeSigned(buf, offset, value, bytes) {
+      write(buf, offset, value < 0 ? value + Math.pow(256, bytes) : value, bytes);
+    }
+    function finish(buf, len) {
+      const crc = crc16(buf, len - 2);
+      write(buf, len - 2, crc, 2);
+      return Array.from(buf.subarray(0, len)).map((b) => b.toString(16).toUpperCase().padStart(2, "0")).join(" ");
+    }
+
+    const startUnix = Math.floor(Date.now() / 1000) - 60;
+    let seq = 0, statusSeq = 0;
+    for (let t = 0; t <= 20000; t += 50) {
+      const buf = new Uint8Array(40);
+      buf[0] = MAGIC_0; buf[1] = MAGIC_1; buf[2] = PROTOCOL_VERSION; buf[3] = PACKET_FAST;
+      write(buf, 4, seq++, 2);
+      write(buf, 6, t, 4);
+      writeSigned(buf, 10, Math.round((38.58 + t * 0.0000002) * 1e6), 4);
+      writeSigned(buf, 14, Math.round((-90.19 + t * 0.0000003) * 1e6), 4);
+      const burn = t < 2000, coast = t >= 2000 && t < 6000, descend = t >= 6000;
+      let altFt = 0, accelZ = 1000;
+      if (burn) { altFt = (t / 2000) * 1800; accelZ = 6000; }
+      else if (coast) { altFt = 1800 + Math.sin(((t - 2000) / 4000) * Math.PI) * 600; accelZ = 950; }
+      else { altFt = Math.max(0, 2400 - ((t - 6000) / 14000) * 2400); accelZ = 980; }
+      writeSigned(buf, 18, Math.round((altFt / 3.28084) * 100), 2);
+      writeSigned(buf, 20, 20, 2);
+      writeSigned(buf, 22, -15, 2);
+      writeSigned(buf, 24, accelZ, 2);
+      writeSigned(buf, 26, Math.round(Math.sin(t / 300) * 400), 2);
+      writeSigned(buf, 28, Math.round(Math.cos(t / 300) * 300), 2);
+      writeSigned(buf, 30, 50, 2);
+      write(buf, 32, Math.round(101325 - altFt * 3.5), 4);
+      buf[36] = 0x01 | 0x02 | 0x04 | 0x08 | 0x10 | 0x20 | 0x40 | 0x80;
+      buf[37] = 9;
+      lines.push(finish(buf, 40));
+
+      if (t % 2000 === 0) {
+        const sbuf = new Uint8Array(32);
+        sbuf[0] = MAGIC_0; sbuf[1] = MAGIC_1; sbuf[2] = PROTOCOL_VERSION; sbuf[3] = PACKET_STATUS;
+        write(sbuf, 4, statusSeq++, 2);
+        write(sbuf, 6, t, 4);
+        write(sbuf, 10, Math.round((4.1 - t * 0.00001) * 1000), 2);
+        write(sbuf, 12, Math.min(100, Math.round(t / 760)), 2);
+        writeSigned(sbuf, 14, -62, 1);
+        writeSigned(sbuf, 15, 9, 1);
+        sbuf[16] = 9;
+        sbuf[17] = buf[36];
+        write(sbuf, 18, Math.round(t * 16), 4);
+        write(sbuf, 22, 0, 4);
+        write(sbuf, 26, startUnix + Math.floor(t / 1000), 4);
+        lines.push(finish(sbuf, 32));
+      }
+    }
+
+    lines.push("# FLASH DUMP END - " + (seq + statusSeq) + " packets (synthetic example)");
+    return lines.join("\n");
+  }
+})();
+</script>
