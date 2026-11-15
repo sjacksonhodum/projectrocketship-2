@@ -8,4 +8,5 @@
 - esp32 for mcu?? (maybe espnow if we configure correctly)
 - off the shelf fpv flight controller to base stack off of (could include baro and imu already)
 please edit this and add accordingly 
--autolaunch 
+- Pyro trigger for auto launch
+- dual cameras, able to have digital and analog osd with the fc I have. 
