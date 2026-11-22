@@ -10,3 +10,4 @@
 please edit this and add accordingly 
 - Pyro trigger for auto launch
 - dual cameras, able to have digital and analog osd with the fc I have. 
+- FAN FOR COOLING VTX AND ELECTRONICS
