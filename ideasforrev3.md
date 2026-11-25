@@ -12,3 +12,5 @@ please edit this and add accordingly
 - dual cameras, able to have digital and analog osd with the fc I have. 
 - FAN FOR COOLING VTX AND ELECTRONICS
 - ADD AN ND FILTER FOR CAMERA THATS NEXT TO THE MOTOR ALSO MAKE SURE ITS ISO IS FIXED SO IT DOESNT ADJUST LIKE CRAZY (maybe)
+- have settings on air unit that prioritze all 3, fov, fps, and quality.
+- probably 1080@100 with 4:3
