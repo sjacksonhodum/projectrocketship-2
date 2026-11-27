@@ -14,3 +14,9 @@ please edit this and add accordingly
 - ADD AN ND FILTER FOR CAMERA THATS NEXT TO THE MOTOR ALSO MAKE SURE ITS ISO IS FIXED SO IT DOESNT ADJUST LIKE CRAZY (maybe)
 - have settings on air unit that prioritze all 3, fov, fps, and quality.
 - probably 1080@100 with 4:3
+- Design a web configurator similar to betaflight
+- Ship the idea
+- Web flasher for other flight controllers that can be flashed from a bin file
+- modularity for OSD (digital and analog) that can both be edited on web interface
+- Developer docs to adapt firmware to other flight controllers.
+- Maybe produce a kit with all components together to produce and ship when finalized (isaac if you are reading this please let me know what you think)
